@@ -1,0 +1,25 @@
+@import "../Base/variableGobale";
+
+.footer{
+  background-color: $orange-fonce;
+  padding: 40px;
+}
+
+.footer-barre{
+  color: $orange-clair;
+  background-color: $orange-tres-fonce;
+  padding: 10px;
+}
+
+.footer-barre p {
+  margin: 0;
+}
+
+.footer-barre a {
+  text-decoration: none;
+  color: $orange-clair;
+}
+
+.footer-barre a:hover {
+  color: $orange;
+}

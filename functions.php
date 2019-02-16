@@ -65,13 +65,13 @@ add_action('admin_init', 'mb_admin_init');
 
 function mb_setup(){
 
-    //permet d'ajouter un image a la une sur les articles
+    //permet d'ajouter un image à la une sur les articles
     add_theme_support('post-thumbnails');
 
     // creer format image slider front
     add_image_size('front-slider', 1140, 420, true);
 
-    //enlèle le génératuer de version
+    //enlève le générateur de version
     remove_action('wp_head', 'wp_generator');
 
     //enlever les guillemets à la française
@@ -84,7 +84,10 @@ function mb_setup(){
     require_once('includes/class-wp-bootstrap-navwalker.php');
 
     //active menu
-    register_nav_menus(array('primary'=> 'principal'));
+    register_nav_menus(array(
+            'primary'=> 'principal',
+            'footer_menu' => 'Footer Menu',
+    ));
 }
 
 add_action('after_setup_theme', 'mb_setup' );
@@ -159,7 +162,7 @@ function mb_admin_widget() {
         'name'          =>'Footer Widget Zone',
         'description'   =>'widget affichés dans le footer : 4 au maximum',
         'id'            =>'widgetized-footer',
-        'before_widget' =>'<div id="%1$s" class="col-md-3 col-sm-6 %2$s" ><div class="inside-widget"> ',
+        'before_widget' =>'<div id="%1$s" class="%2$s" ><div class="inside-widget"> ',
         'after_widget'  =>'</div></div>',
         'before_title'  =>'<h2 class=""> ',
         'after_title'   =>'</h2>'
@@ -280,7 +283,7 @@ function mb_front_slider_init() {
 add_action( 'init', 'mb_front_slider_init' );
 
 
-// ===========  ajout image et ordre pou slider
+// ===========  ajout image et ordre pour slider
 //=================================================================
 
 add_filter('manage_edit-mb_slider_columns', 'mb_col_change'); //change nom colonnes

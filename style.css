@@ -37,21 +37,6 @@ h2 {
   padding: 10px 0;
 }
 
-.titre-admin {
-  text-align: center;
-  padding: 30px;
-  background-color: #e07357;
-}
-
-.mb-set-opt {
-  margin-bottom: 30px;
-}
-
-.btn-submit-admin {
-  width: 50%;
-  margin-bottom: 10px;
-}
-
 .header {
   background-color: #822205;
   padding: 40px 0;
@@ -79,4 +64,28 @@ h2 {
 
 .afficheExpo {
   width: 70%;
+}
+
+.footer {
+  background-color: #822205;
+  padding: 40px;
+}
+
+.footer-barre {
+  color: #e07357;
+  background-color: #1f0700;
+  padding: 10px;
+}
+
+.footer-barre p {
+  margin: 0;
+}
+
+.footer-barre a {
+  text-decoration: none;
+  color: #e07357;
+}
+
+.footer-barre a:hover {
+  color: #e82c04;
 }
