@@ -61,4 +61,33 @@ jQuery(document).ready(function($){
     });
 
 
+    //************* ajout artiste **************
+
+    var frameArtiste = wp.media({
+        title: 'selectionner une image',
+        button: {
+            text: 'Utiliser ce média'
+        },
+        multiple: false
+    });
+
+    $("#form-mb-options-artiste #btn_img_artiste").click(function(e){
+        e.preventDefault();
+        frameArtiste.open();
+    });
+
+    frameArtiste.on( 'select', function() {
+
+        var objImg = frameArtiste.state().get('selection').first().toJSON();
+        var img_full_url = objImg.sizes.full.url;
+        var img_thumbnail_url = objImg.sizes.thumbnail.url;
+
+        $("img#img_preview_artiste").attr('src', img_thumbnail_url);
+        $("input#mb_image_artiste").attr('value', img_full_url);
+        $("input#mb_image_url_artiste").attr('value', img_full_url);
+        $("input#mb_image_url_artiste_thumbnail").attr('value', img_thumbnail_url);
+
+    });
+
+
 });

@@ -1,3 +1,7 @@
+.mb-width-100{
+    width: 100%;
+}
+
 .alert-success{
     padding: 10px;
     text-align: center;
@@ -27,7 +31,6 @@ h1, h2, h3{
 .titre{
     font-size: 50px;
 }
-
 .sous-titre{
     font-size: 25px;
 }
@@ -37,4 +40,10 @@ h1, h2, h3{
 }
 #mb_image_01{
     margin-top: 45px;
+}
+#mb_bio_artiste{
+    height: 120px;
+}
+#mb_accroche_artiste{
+    margin-bottom: 16px;
 }

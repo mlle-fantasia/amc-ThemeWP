@@ -53,6 +53,9 @@ function mb_admin_init()
     //action 3 : ajout options expo
     add_action('admin_post_mb_save_options_expo', 'mb_save_option_expo');
 
+    //action 4 : ajout options artiste
+    add_action('admin_post_mb_save_options_artiste', 'mb_save_option_artiste');
+
 
 }
 
@@ -128,6 +131,18 @@ function mb_activ_options(){
         );
         add_action('mb_opts', $opts);
     }
+
+    $theme_opt_artiste = get_option('mb_opts_artiste');
+    if(!$theme_opt_artiste){
+        $opts_artiste = array(
+            'photo_artiste_url' =>'',
+            'photo_artiste_url_thumbnail' => '',
+            'accroche_artiste' =>'',
+            'bio_artiste' => ''
+        );
+        add_action('mb_opts_artiste', $opts_artiste);
+    }
+
 }
 
 add_action('after_switch_theme', 'mb_activ_options');

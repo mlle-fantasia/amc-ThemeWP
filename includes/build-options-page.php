@@ -2,6 +2,8 @@
 function mb_build_option_page(){
 
     $theme_opts = get_option('mb_opts');
+    $theme_opts_artiste = get_option('mb_opts_artiste');
+
 ?>
 
     <div class="wrap">
@@ -107,7 +109,51 @@ function mb_build_option_page(){
                     </form>
 
             </div>
-         </div><!--   fin row-->
+        </div><!--   fin row-->
+
+        <div class="row">
+            <div class="mb-set-opt">
+                <div class="titre-admin">
+                    <h2 class="sous-titre"> l'artiste </h2>
+                </div>
+                <?php
+                if(isset($_GET['status']) && $_GET['status']== 3){
+                    echo '<div class="alert-success">Mise à jour éffectuée avec succès</div>';
+                }
+                ?>
+                <form id="form-mb-options-artiste" action="admin-post.php" method="post" class="form-horizontal" >
+                    <input type="hidden" name="action" value="mb_save_options_artiste">
+                    <?php wp_nonce_field('mb_options_verify'); ?>
+
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <h3 class="petit-titre">Photo de l'artiste</h3>
+                            <img src="<?php echo $theme_opts_artiste['image_artiste_url_thumbnail']; ?>" alt="" class="mx-auto d-block" id="img_preview_artiste">
+                            <button id="btn_img_artiste" class="btn btn-primary btn-select-img btn-submit-admin">Choisir une image</button>
+                            <input type="text" id="mb_image_artiste" name="mb_image_artiste" value="<?php echo $theme_opts_artiste['image_artiste_url']; ?>" disabled/>
+                            <input type="hidden" id="mb_image_url_artiste" name="mb_image_url_artiste" value="<?php echo $theme_opts_artiste['image_artiste_url']; ?>"/>
+                            <input type="hidden" id="mb_image_url_artiste_thumbnail" name="mb_image_url_artiste_thumbnail" value="<?php echo $theme_opts_artiste['image_artiste_url_thumbnail']; ?>"/>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h3 class="petit-titre">Biographie</h3>
+                            <label for="mb_accroche_artiste" class="control-label">Phrase d'accroche :</label>
+                            <input type="text" id="mb_accroche_artiste" name="mb_accroche_artiste" value="<?php echo $theme_opts_artiste['accroche_artiste']; ?>" class="mb-width-100">
+                            <label for="mb_bio_artiste" class="control-label ">Biographie :</label>
+                            <textarea id="mb_bio_artiste" name="mb_bio_artiste" class="mb-width-100"><?php echo $theme_opts_artiste['bio_artiste']; ?></textarea>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container-btn-submit-admin">
+                                <button id="validator_artiste" type="submit" class="btn btn-success btn-submit-admin">Enregistrer</button>
+                            </div>
+
+                        </div>
+                </form>
+
+            </div>
+        </div><!--   fin row-->
+
         </div><!--   fin container-->
     </div>
 
