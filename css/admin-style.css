@@ -1,0 +1,35 @@
+.alert-success{
+    padding: 10px;
+    text-align: center;
+}
+.titre-admin{
+    text-align: center;
+    padding: 20px;
+    background-color: #f36e53;
+    border-radius: 5px 5px;
+    border-bottom: #ec5700 solid 3px;
+    margin: 20px 0;
+}
+
+.mb-set-opt{
+    margin-bottom: 50px;
+    width: 100%;
+}
+.btn-submit-admin{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+.titre{
+    font-size: 50px;
+}
+
+.sous-titre{
+    font-size: 25px;
+}
+.petit-titre{
+    font-size: 20px;
+}

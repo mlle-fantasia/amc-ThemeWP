@@ -33,6 +33,8 @@ function mb_admin_init()
         if (!isset($_GET['page']) || $_GET['page'] != "mb_theme_opts") {
             return;
         }
+        wp_enqueue_style('mb_admin_custom', get_template_directory_uri().'/css/admin-style.css', array('mb_admin_bootstrap'), 'MB_VERSION', 'all');
+
         wp_enqueue_style('mb_admin_bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'MB_VERSION', 'all');
 
         //chargement des script admin
@@ -42,9 +44,16 @@ function mb_admin_init()
     }
     add_action('admin_enqueue_scripts', 'mb_admin_scripts');
 
-    //action 2 : ajout options
-    include('includes/save_options-page.php'); //contient a fonction mb_save_options
+
+    include('includes/save_options-page.php'); //contient les fonctions de sauvegarde des options
+
+    //action 2 : ajout options logo
     add_action('admin_post_mb_save_options', 'mb_save_options');
+
+    //action 3 : ajout options expo
+    add_action('admin_post_mb_save_options_expo', 'mb_save_option_expo');
+
+
 }
 
 add_action('admin_init', 'mb_admin_init');
@@ -99,17 +108,17 @@ add_filter('image_size_names_choose', 'my_image_size' );
 //=================================================================
 // ===========  activation d'option
 //=================================================================
-
+//création de l'option une seule fois quand on change de theme grace au hook : after_switch_theme
 function mb_activ_options(){
 
     $theme_opt = get_option('mb_opts');
-    if(!$theme_opt){
+    if(!$theme_opt){       // pour le pas recréer l'option a chaque rendu on test si elle existe déjà
         $opts = array(
             'image_01_url' =>'',
-            'legend_01' => '',
             'image_expo_url' => '',
             'image_expo_url_thumbnail' => '',
-            'date_expo' => '',
+            'date_debut_expo' => '',
+            'date_fin_expo' => '',
             'lieu_expo' => '',
             'description_expo' => '',
             'titre_expo' => ''
@@ -129,10 +138,10 @@ function mb_admin_menu(){
 
     add_menu_page(
         'marinabay Option',
-        'options du theme',
-        'publish_pages',
-        'mb_theme_opts',
-        'mb_build_option_page'
+        'options du theme',  // titre affiché
+        'publish_pages',     // accessibilité de l'utilisateur : ok pour l'éditeur
+        'mb_theme_opts',     //slug
+        'mb_build_option_page'  // fonction appelée
     );
 
     include('includes/build-options-page.php');

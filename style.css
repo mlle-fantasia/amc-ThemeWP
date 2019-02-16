@@ -23,6 +23,14 @@ Text Domain: marinabay
   height: auto;
 }
 
+/***********  Les couleurs  *************/
+/****************************************/
+/***********  typographie  *************/
+/****************************************/
+@font-face {
+  font-family: 'FontTitre';
+  src: url("assets/font/cormorant/CormorantUpright-Regular.otf");
+}
 /**************  titres  ****************/
 /****************************************/
 h2 {
@@ -32,26 +40,16 @@ h2 {
 .titre-admin {
   text-align: center;
   padding: 30px;
-
+  background-color: #e07357;
 }
 
-/***********  Les couleurs  *************/
-/****************************************/
-/***********  typographie  *************/
-/****************************************/
-@font-face {
-  font-family: 'FontTitre';
-  src: url("assets/font/cormorant/CormorantUpright-Regular.otf");
-}
-/***********  typographie  *************/
-/****************************************/
-h2 {
-  padding: 10px 0;
+.mb-set-opt {
+  margin-bottom: 30px;
 }
 
-.jumbotron {
-  text-align: center;
-  padding: 30px;
+.btn-submit-admin {
+  width: 50%;
+  margin-bottom: 10px;
 }
 
 .header {
@@ -77,4 +75,8 @@ h2 {
 .front-page-titre {
   font-family: FontTitre;
   color: #e82c04;
+}
+
+.afficheExpo {
+  width: 70%;
 }

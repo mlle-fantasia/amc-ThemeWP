@@ -2,19 +2,34 @@
 
 function mb_save_options(){
 
+    if(!current_user_can('publish_pages')){ // verifie que l'utilisateur a les bon accès
+        wp_die('vous n\'êtes pas autorisé à éffectuer cette oppération');
+    }
+    check_admin_referer('mb_options_verify'); // verifie que la personnes est autorisé
+
+    $opts = get_option('mb_opts');
+
+    //sauvegarde image
+    $opts['image_01_url'] = sanitize_text_field($_POST["mb_image_url_01"]);
+
+
+    update_option('mb_opts', $opts);
+
+    wp_redirect(admin_url('admin.php?page=mb_theme_opts&status=1'));
+    exit;
+
+} // fin de la function mb_save_options()
+
+
+
+function mb_save_option_expo(){
+
     if(!current_user_can('publish_pages')){
         wp_die('vous n\'êtes pas autorisé à éffectuer cette oppération');
     }
     check_admin_referer('mb_options_verify');
 
     $opts = get_option('mb_opts');
-    var_dump($opts);
-
-    //sauvegarde légende
-    $opts['legend_01'] = sanitize_text_field($_POST["mb_legend_01"]);
-
-    //sauvegarde image
-    $opts['image_01_url'] = sanitize_text_field($_POST["mb_image_url_01"]);
 
     //sauvegarde image expo
     $opts['image_expo_url'] = sanitize_text_field($_POST["mb_image_url_expo"]);
@@ -23,7 +38,8 @@ function mb_save_options(){
     $opts['image_expo_url_thumbnail'] = sanitize_text_field($_POST["mb_image_url_expo_thumbnail"]);
 
     //sauvegarde date expo
-    $opts['date_expo'] = sanitize_text_field($_POST["mb_date_expo"]);
+    $opts['date_debut_expo'] = sanitize_text_field($_POST["mb_date_debut_expo"]);
+    $opts['date_fin_expo'] = sanitize_text_field($_POST["mb_date_fin_expo"]);
 
     //sauvegarde titre expo
     $opts['titre_expo'] = sanitize_text_field($_POST["mb_titre_expo"]);
@@ -36,7 +52,7 @@ function mb_save_options(){
 
     update_option('mb_opts', $opts);
 
-    wp_redirect(admin_url('admin.php?page=mb_theme_opts&status=1'));
+    wp_redirect(admin_url('admin.php?page=mb_theme_opts&status=2'));
     exit;
 
-} // fin de la function mb_save_options()
+} // fin de la function mb_save_options_expo

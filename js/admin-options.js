@@ -1,5 +1,9 @@
 jQuery(document).ready(function($){
 
+    if ($('.alert-success')){
+        $('.alert-success').hide();
+    }
+
     //************* ajout logo  **************
 
     var frame = wp.media({
@@ -19,8 +23,6 @@ jQuery(document).ready(function($){
 
         var objImg = frame.state().get('selection').first().toJSON();
         var img_url = objImg.sizes.full.url;
-
-
 
         $("img#img_preview_01").attr('src', img_url);
         $("input#mb_image_01").attr('value', img_url);
@@ -51,10 +53,11 @@ jQuery(document).ready(function($){
         var img_full_url = objImg.sizes.full.url;
         var img_thumbnail_url = objImg.sizes.thumbnail.url;
 
-
         $("img#img_preview_expo").attr('src', img_thumbnail_url);
         $("input#mb_image_expo").attr('value', img_full_url);
         $("input#mb_image_url_expo").attr('value', img_full_url);
+        $("input#mb_image_url_expo_thumbnail").attr('value', img_thumbnail_url);
+
     });
 
 
