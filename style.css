@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/*!
+Theme Name: marinabay
+Author: Marina Front
+Author URI: www.marinafront.fr
+Description: th├¿me mod├¿le pour int├®grer les fonctionnalit├®s de wordpress
+Version: 1.0
+Text Domain: marinabay
+*/
+.mb-width-100 {
+  width: 100%;
+}
+
+.mb-text-center {
+  text-align: center;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.wp-block-image img {
+  height: auto;
+}
+
+/**************  titres  ****************/
+/****************************************/
+h2 {
+  padding: 10px 0;
+}
+
+.titre-admin {
+  text-align: center;
+  padding: 30px;
+
+}
+
+/***********  Les couleurs  *************/
+/****************************************/
+/***********  typographie  *************/
+/****************************************/
+@font-face {
+  font-family: 'FontTitre';
+  src: url("assets/font/cormorant/CormorantUpright-Regular.otf");
+}
+/***********  typographie  *************/
+/****************************************/
+h2 {
+  padding: 10px 0;
+}
+
+.jumbotron {
+  text-align: center;
+  padding: 30px;
+}
+
+.header {
+  background-color: #822205;
+  padding: 40px 0;
+}
+
+.carousel-home {
+  padding: 0;
+}
+
+.carousel-indicators li {
+  background-color: #822205;
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+}
+
+.carousel-indicators .active {
+  background-color: #e82c04;
+}
+
+.front-page-titre {
+  font-family: FontTitre;
+  color: #e82c04;
+}

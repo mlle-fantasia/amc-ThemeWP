@@ -1,0 +1,14 @@
+@import "../Base/variableGobale";
+
+.carousel-home{
+  padding: 0;
+}
+.carousel-indicators li{
+  background-color: $orange-fonce;
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+}
+.carousel-indicators .active {
+  background-color: $orange;
+}
