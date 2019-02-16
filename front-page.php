@@ -34,13 +34,18 @@
 <section>
     <div class="container">
 
-<!--        --><?php
-//
-//            if($theme_opts['date_expo']):
-//
-//        ?>
+        <?php
+            $date = date('Y-m-j');
+            if($theme_opts['date_debut_expo'] < $date && $date < $theme_opts['date_fin_expo'] ){
+                $titre = 'Exposition en cours';
+            }
+            if($date < $theme_opts['date_debut_expo']  ){
+                $titre = 'Prochaine exposition';
+            }
 
-        <h2 class="front-page-titre mb-text-center">Prochaine Exposition</h2>
+        ?>
+
+        <h2 class="front-page-titre mb-text-center"><?php echo $titre; ?></h2>
         <h4 class="mb-text-center"><?php echo $theme_opts['titre_expo']; ?></h4>
         <div class="row">
             <div class="col-md-8 offset-md-2">
