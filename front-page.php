@@ -30,38 +30,38 @@
 </section>
 
 
-<?php $theme_opts = get_option('mb_opts'); ?>
-<section>
-    <div class="container">
+<?php
+    $theme_opts = get_option('mb_opts');
+    $date = date('Y-m-j');
+    if($theme_opts['date_debut_expo'] < $date && $date < $theme_opts['date_fin_expo'] ){
+        $titre = 'Exposition en cours';
+    }
+    if($date < $theme_opts['date_debut_expo'] ){
+        $titre = 'Prochaine exposition';
+    }
+    $contenu = '<section>
+                    <div class="container">
+                        <h2 class="front-page-titre mb-text-center">'. $titre .'</h2>
+                        <h4 class="mb-text-center">'.$theme_opts["titre_expo"].'</h4>
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                                <img src="'. $theme_opts["image_expo_url"].'" alt="'. $theme_opts["description_expo"].'" class="mb-width-100">
+                            </div>
+                            <div class="col-md-2">
+                                <p><strong>Date : </strong><br>  du '.$theme_opts["date_debut_expo"].' <br> au '. $theme_opts["date_fin_expo"].'</p>
+                                <p><strong>Lieu : </strong><br>'. $theme_opts["lieu_expo"].'</p>
+                                <p><strong>Description : </strong><br>'. $theme_opts["description_expo"].'</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>';
 
-        <?php
-            $date = date('Y-m-j');
-            if($theme_opts['date_debut_expo'] < $date && $date < $theme_opts['date_fin_expo'] ){
-                $titre = 'Exposition en cours';
-            }
-            if($date < $theme_opts['date_debut_expo']  ){
-                $titre = 'Prochaine exposition';
-            }
+    if($theme_opts['date_fin_expo']< $date){
+        $contenu ='';
+    }
+ ?>
 
-        ?>
-
-        <h2 class="front-page-titre mb-text-center"><?php echo $titre; ?></h2>
-        <h4 class="mb-text-center"><?php echo $theme_opts['titre_expo']; ?></h4>
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <img src="<?php echo $theme_opts['image_expo_url']; ?>" alt="<?php echo $theme_opts['description_expo']; ?>" class="mb-width-100">
-            </div>
-            <div class="col-md-2">
-                <p><strong>Date : </strong><br>  du <?php echo $theme_opts['date_debut_expo']; ?> <br> au <?php echo $theme_opts['date_fin_expo']; ?></p>
-                <p><strong>Lieu : </strong><br><?php echo $theme_opts['lieu_expo']; ?></p>
-                <p><strong>Description : </strong><br><?php echo $theme_opts['description_expo']; ?></p>
-            </div>
-        </div>
-
-
-    </div>
-</section>
-
+<?php echo $contenu ?>
 
 <?php get_footer(); ?>
 

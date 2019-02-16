@@ -62,5 +62,23 @@ jQuery(document).ready(function($){
 
 
 
+    //************* supprimer expo **************
+
+
+    $("#form-mb-options-expo #reset_expo").click(function(e){
+        e.preventDefault();
+
+        $("img#img_preview_expo").attr('src', '');
+        $("input#mb_image_expo").attr('value', '');
+        $("input#mb_image_url_expo").attr('value', '');
+        $("input#mb_image_url_expo_thumbnail").attr('value', '');
+
+        $("input#mb_titre_expo").attr('value', '');
+        $("input#mb_date_debut_expo").attr('value', '');
+        $("input#mb_date_fin_expo").attr('value', '');
+        $("input#mb_description_expo").attr('value', '');
+        $("input#mb_lieu_expo").attr('value', '');
+
+    });
 
 });

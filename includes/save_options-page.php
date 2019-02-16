@@ -56,3 +56,28 @@ function mb_save_option_expo(){
     exit;
 
 } // fin de la function mb_save_options_expo
+
+
+function mb_reset_option_expo(){
+
+    if(!current_user_can('publish_pages')){
+        wp_die('vous n\'êtes pas autorisé à éffectuer cette oppération');
+    }
+    check_admin_referer('mb_options_verify');
+
+    $opts = get_option('mb_opts');
+
+    $opts['image_expo_url'] = '';
+    $opts['image_expo_url_thumbnail'] = '';
+    $opts['date_debut_expo'] ='';
+    $opts['date_fin_expo'] = '';
+    $opts['titre_expo'] = '';
+    $opts['lieu_expo'] = '';
+    $opts['description_expo'] = '';
+
+    update_option('mb_opts', $opts);
+
+    wp_redirect(admin_url('admin.php?page=mb_theme_opts&status=2'));
+    exit;
+
+}// fin de la function mb_reset_options_expo
