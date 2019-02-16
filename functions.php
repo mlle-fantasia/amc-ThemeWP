@@ -53,9 +53,6 @@ function mb_admin_init()
     //action 3 : ajout options expo
     add_action('admin_post_mb_save_options_expo', 'mb_save_option_expo');
 
-    //action 4 : ajout options expo
-    add_action('admin_post_mb_reset_options_expo', 'mb_reset_option_expo');
-
 
 }
 

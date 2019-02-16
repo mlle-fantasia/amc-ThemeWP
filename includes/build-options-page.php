@@ -105,12 +105,6 @@ function mb_build_option_page(){
                             </div>
                         </div>
                     </form>
-                    <form id="form-mb-options-expo-reset" action="admin-post.php?action=delete" method="post" class="form-horizontal" >
-                        <input type="hidden" name="action" value="mb_reset_options_expo">
-                        <div class="container-btn-submit-admin">
-                            <button id="reset_expo" type="submit" class="btn btn-danger btn-submit-admin">Supprimer l'expo</button>
-                        </div>
-                    </form>
 
             </div>
          </div><!--   fin row-->
