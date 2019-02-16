@@ -2,35 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9fa5ef3-943f-4dfd-bb11-495f5c8db9c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/build-options-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build-options-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/save_options-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/save_options-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/admin-options.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin-options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin-style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/js/admin-options.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="738">
-                    <caret line="61" selection-start-line="61" selection-end-line="61" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1149028676">
@@ -66,7 +44,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="147" />
+          <entry key="CSS" value="169" />
           <entry key="HTML" value="7" />
           <entry key="JavaScript" value="311" />
           <entry key="PHP" value="5025" />
@@ -75,8 +53,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="4" />
-          <entry key="JavaScript" value="6" />
+          <entry key="CSS" value="5" />
+          <entry key="JavaScript" value="7" />
           <entry key="PHP" value="20" />
           <entry key="SCSS" value="23" />
         </counts>
@@ -85,10 +63,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="-892">
               <caret line="53" column="73" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
             </state>
           </provider>
@@ -106,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/save_options-page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
+            <state relative-caret-position="986">
               <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
@@ -130,6 +108,24 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin-options.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/admin-style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -142,8 +138,8 @@
       <find>mb_legend_01</find>
       <find>mb_image_url_01</find>
       <find>mb_save_options_expo</find>
-      <find>primary</find>
       <find>mb_save_options</find>
+      <find>primary</find>
     </findStrings>
     <replaceStrings>
       <replace>image</replace>
@@ -167,7 +163,6 @@
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/scss/Modules/_zoneExpo.scss" />
         <option value="$PROJECT_DIR$/scss/Base/_classGlobale.scss" />
-        <option value="$PROJECT_DIR$/css/admin-style.css" />
         <option value="$PROJECT_DIR$/scss/Layouts/_carousel.scss" />
         <option value="$PROJECT_DIR$/scss/_helpers.scss" />
         <option value="$PROJECT_DIR$/scss/style.scss" />
@@ -178,6 +173,7 @@
         <option value="$PROJECT_DIR$/includes/save_options-page.php" />
         <option value="$PROJECT_DIR$/js/admin-options.js" />
         <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/css/admin-style.css" />
       </list>
     </option>
   </component>
@@ -297,12 +293,12 @@
       <workItem from="1550067615158" duration="2416000" />
       <workItem from="1550070048167" duration="11000" />
       <workItem from="1550247486600" duration="23690000" />
-      <workItem from="1550306119639" duration="21269000" />
+      <workItem from="1550306119639" duration="22002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47386000" />
+    <option name="totallyTimeSpent" value="48119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -385,13 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/admin-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scss/Layouts/_carousel.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -465,13 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/save_options-page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/build-options-page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="537">
@@ -479,17 +461,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin-options.js">
+    <entry file="file://$PROJECT_DIR$/includes/save_options-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="986">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="-892">
           <caret line="53" column="73" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin-options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/admin-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
         </state>
       </provider>
     </entry>
