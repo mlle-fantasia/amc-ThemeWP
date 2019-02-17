@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="container-fluid footer-barre">
-        <p class="mb-text-center">Thème wordpress créé par Marina Front <a href="">( Dépôt Github )</a></p>
+        <p class="mb-text-center">Thème wordpress créé par Marina Front <a href="https://github.com/mlle-fantasia/amc-ThemeWP" target="_blank">( Dépôt Github )</a></p>
         <p class="mb-text-center"><a href="http://www.marinafront.fr" target="_blank">www.marinafront.fr</a></p>
     </div>
 </footer>

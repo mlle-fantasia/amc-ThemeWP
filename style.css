@@ -37,6 +37,14 @@ h2 {
   padding: 10px 0;
 }
 
+hr {
+  color: #e07357;
+}
+
+.container {
+  margin-bottom: 50px;
+}
+
 .header {
   background-color: #822205;
   padding: 40px 0;
