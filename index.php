@@ -4,15 +4,23 @@
     <?php get_header(); ?>
 
     <?php
-        $section = 'pasContact';
+        $section = '';
         $currentPage = home_url( $wp->request );
         if($currentPage == 'http://amc/me-contacter'){
             $section = 'contact';
+            $titre = 'Contactez-moi';
         }
     ?>
 
         <section class="section <?php echo $section; ?>">
             <div class="container">
+                <h2 class="front-page-titre mb-text-center"><?php echo $titre; ?></h2><hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/contact.jpg" alt="image de pinceaux posés sur une peinture" class="mb-width-100">
+                    </div>
+                </div>
+
                 <?php if (have_posts()):
                     while(have_posts()): the_post();
 

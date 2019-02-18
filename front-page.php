@@ -10,7 +10,7 @@
     $theme_opts_artiste = get_option('mb_opts_artiste');
 
 ?>
-<section class="section artiste">
+<section class="section artiste" id="artiste">
     <div class="container">
         <h2 class="front-page-titre mb-text-center">L'artiste</h2><hr>
         <div class="row">
@@ -20,7 +20,7 @@
         </div>
     </div>
 </section>
-<section class=" section galerie">
+<section class=" section galerie" id="galerie">
     <div class="container">
         <?php if (have_posts()):
             while(have_posts()): the_post(); ?>
@@ -53,7 +53,7 @@
     if($date < $theme_opts['date_debut_expo'] ){
         $titre = 'Prochaine exposition';
     }
-    $contenu = '<section class="section expo">
+    $contenu = '<section class="section expo" id="expo">
                     <div class="container">
                         <h2 class="front-page-titre mb-text-center">'. $titre .'</h2><hr>
                         <h4 class="mb-text-center">'.$theme_opts["titre_expo"].'</h4>

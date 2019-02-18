@@ -134,13 +134,11 @@ h4 {
 }
 
 .contact {
-  background-image: url("assets/contact30.jpg");
-  background-size: cover;
-  backdrop-filter: brightness(20%);
+  background-color: #ffb4a2;
 }
 
 .formContact {
-  margin: 50px;
+  margin: 50px 0;
 }
 
 .formContact label {
@@ -148,13 +146,30 @@ h4 {
 }
 
 .formContact input {
-  width: 50%;
+  width: 100%;
 }
 
 .formContact textarea {
-  width: 50%;
+  width: 100%;
 }
 
 .formContact input[type="submit"] {
   width: 15%;
+}
+
+div.wpcf7-validation-errors {
+  border: 2px solid #e82c04;
+  border-radius: 5px;
+  background-color: #ff7f7f;
+}
+
+.mb-btn {
+  background-color: #e07357;
+  border: 1px solid #e82c04;
+}
+
+.mb-input:focus {
+  border-color: #e82c04;
+  outline: 0;
+  box-shadow: 0 0 2px 2px #e07357;
 }
