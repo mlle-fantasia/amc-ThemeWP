@@ -2,14 +2,29 @@
 
 /**************  titres  ****************/
 /****************************************/
+.front-page-titre{
+  font-family: FontTitre;
+  color: $orange-tres-fonce;
+  padding: 20px 0 0 0;
+  margin-bottom: 0;
+}
 
-h2{
-  padding: 10px 0;
+
+.section{
+  margin-top: 15px;
 }
 
 hr{
-  color: $orange-clair;
+  border-top-width: 3px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 50%;
+  border-color: $orange-tres-fonce;
 }
 .container{
   margin-bottom: 50px;
+}
+
+*{
+  margin-bottom: 0;
 }

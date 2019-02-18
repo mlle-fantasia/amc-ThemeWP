@@ -10,22 +10,17 @@
     $theme_opts_artiste = get_option('mb_opts_artiste');
 
 ?>
-<section>
+<section class="section artiste">
     <div class="container">
         <h2 class="front-page-titre mb-text-center">L'artiste</h2><hr>
         <div class="row">
-            <div class="col-md-4">
-                <img src="<?php echo $theme_opts_artiste["image_artiste_url"] ?>" alt="photo de l'artiste" class="mb-width-100">
-            </div>
-            <div class="col-md-6">
-                <p><strong><?php echo $theme_opts_artiste["accroche_artiste"] ?></strong></p>
-                <p><?php echo $theme_opts_artiste["bio_artiste"] ?></p>
-            </div>
+            <img src="<?php echo $theme_opts_artiste["image_artiste_url"] ?>" alt="photo de l'artiste" class="mb-width-100">
+            <p class="mb-text-center"><strong><?php echo $theme_opts_artiste["accroche_artiste"] ?></strong></p>
+            <p class="mb-text-center"><?php echo $theme_opts_artiste["bio_artiste"] ?></p>
         </div>
     </div>
 </section>
-
-<section>
+<section class=" section galerie">
     <div class="container">
         <?php if (have_posts()):
             while(have_posts()): the_post(); ?>
@@ -58,18 +53,22 @@
     if($date < $theme_opts['date_debut_expo'] ){
         $titre = 'Prochaine exposition';
     }
-    $contenu = '<section>
+    $contenu = '<section class="section expo">
                     <div class="container">
                         <h2 class="front-page-titre mb-text-center">'. $titre .'</h2><hr>
                         <h4 class="mb-text-center">'.$theme_opts["titre_expo"].'</h4>
                         <div class="row">
-                            <div class="col-md-8 offset-md-2">
+                            <div class="col-md-12">
                                 <img src="'. $theme_opts["image_expo_url"].'" alt="'. $theme_opts["description_expo"].'" class="mb-width-100">
                             </div>
-                            <div class="col-md-2">
-                                <p><strong>Date : </strong><br>  du '.$theme_opts["date_debut_expo"].' <br> au '. $theme_opts["date_fin_expo"].'</p>
-                                <p><strong>Lieu : </strong><br>'. $theme_opts["lieu_expo"].'</p>
-                                <p><strong>Description : </strong><br>'. $theme_opts["description_expo"].'</p>
+                        </div>    
+                        <div class="row mb-infoExpo">
+                            <div class="col-md-8">
+                                <p class="mb-text-center"><strong class="mb-titreinfoExpo">Description : </strong><br>'. $theme_opts["description_expo"].'</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="mb-text-center"><strong class="mb-titreinfoExpo">Date : </strong><br>  du '.$theme_opts["date_debut_expo"].' au '. $theme_opts["date_fin_expo"].'</p>
+                                <p class="mb-text-center"><strong class="mb-titreinfoExpo">Lieu : </strong><br>'. $theme_opts["lieu_expo"].'</p>  
                             </div>
                         </div>
                     </div>

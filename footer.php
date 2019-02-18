@@ -23,15 +23,6 @@
                 </nav>
             </div>
 
-
-<!--           --><?php
-//               if(is_active_sidebar('widgetized-footer')):
-//               dynamic_sidebar('widgetized-footer');
-//               else:
-//           ?>
-<!--                <p class="mb-text-center">thème wordpress créé par Marina</p>-->
-<!---->
-<!--           --><?php //endif; ?>
         </div>
     </div>
     <div class="container-fluid footer-barre">

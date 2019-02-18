@@ -9,7 +9,7 @@ $slider_query = new WP_Query($args);
 
 
 if($slider_query-> have_posts()): ?>
-<section>
+<section class="section">
     <div class="container-fluid carousel-home">
         <div id="slider-01" class="carousel slide" data-ridex="carousel">
             <ol class="carousel-indicators">
