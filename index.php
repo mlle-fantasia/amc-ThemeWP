@@ -3,8 +3,15 @@
 
     <?php get_header(); ?>
 
+    <?php
+        $section = 'pasContact';
+        $currentPage = home_url( $wp->request );
+        if($currentPage == 'http://amc/me-contacter'){
+            $section = 'contact';
+        }
+    ?>
 
-        <section>
+        <section class="section <?php echo $section; ?>">
             <div class="container">
                 <?php if (have_posts()):
                     while(have_posts()): the_post();

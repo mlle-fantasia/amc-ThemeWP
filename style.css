@@ -132,3 +132,29 @@ h4 {
 .footer-barre a:hover {
   color: #e82c04;
 }
+
+.contact {
+  background-image: url("assets/contact30.jpg");
+  background-size: cover;
+  backdrop-filter: brightness(20%);
+}
+
+.formContact {
+  margin: 50px;
+}
+
+.formContact label {
+  width: 100%;
+}
+
+.formContact input {
+  width: 50%;
+}
+
+.formContact textarea {
+  width: 50%;
+}
+
+.formContact input[type="submit"] {
+  width: 15%;
+}
