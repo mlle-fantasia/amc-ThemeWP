@@ -1,7 +1,39 @@
 @import "../Base/variableGobale";
 
 .header{
-  background-color: $orange-fonce;
-  padding: 40px 0;
+  background-image: url("assets/fond-header.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  padding: 80px 0;
 }
 
+.mb-container-nav{
+  position: absolute;
+  top: 336px;
+  right: 420px;
+}
+.mb-nav a{
+
+}
+.mb-item-nav{
+  padding: 12px 15px 12px 30px;
+  background-color: #1b1b1b;
+}
+.mb-nav .navbar-light .navbar-nav a{
+  color: $blanc(!important);
+
+}
+
+.mb-item-nav:before{
+  width: 150px;
+  height: 64px;
+  background-color: #1b1b1b00;
+  position: absolute;
+  display: block;
+  content: ".";
+  color: #fff0;
+  top: 0;
+  right: -150px;
+  border-left: 30px solid #1b1b1b;
+  border-top: 30px solid #fff0;
+}

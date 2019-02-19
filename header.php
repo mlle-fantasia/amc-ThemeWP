@@ -30,30 +30,32 @@
     <header class="header">
         <div class="container">
             <?php $theme_opts = get_option('mb_opts'); ?>
-            <div class="row d-flex justify-content-between">
+            <div class="row">
                 <div class="">
-                    <a href="/"><img src="<?php echo $theme_opts['image_01_url']; ?>" alt="<?php echo $theme_opts['legend_01']; ?>"></a>
+                    <a href="/"><img src="<?php echo $theme_opts['image_01_url']; ?>" alt=""></a>
                 </div>
-                <div>
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <?php
-                        wp_nav_menu(array(
-                            'menu'               => 'top-menu', // 'top-menu' est le nom que l'on donne a notre menu
-                            'theme_location'     => 'primary', // 'primary' correspond à ce qu'oon a écrit dans register_nav_menus() dans functions.php
-                            'depth'              => 2,
-                            'container'          => 'div',
-                            'container_class'    => 'collapse navbar-collapse',
-                            'container_id'       => 'navbarSupportedContent',
-                            'menu_class'         => 'navbar-nav',
-                            'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
-                            'walker'             => new wp_bootstrap_navwalker()
-                        ));
-                        ?>
-                    </nav>
-                </div><!-- fin de la col 6 -->
+                <div class="mb-container-nav">
+                    <div class="mb-nav">
+                        <nav class="navbar navbar-expand-lg navbar-light mb-item-nav">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <?php
+                            wp_nav_menu(array(
+                                'menu'               => 'top-menu', // 'top-menu' est le nom que l'on donne a notre menu
+                                'theme_location'     => 'primary', // 'primary' correspond à ce qu'oon a écrit dans register_nav_menus() dans functions.php
+                                'depth'              => 2,
+                                'container'          => 'div',
+                                'container_class'    => 'collapse navbar-collapse',
+                                'container_id'       => 'navbarSupportedContent',
+                                'menu_class'         => 'navbar-nav',
+                                'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                'walker'             => new wp_bootstrap_navwalker()
+                            ));
+                            ?>
+                        </nav>
+                    </div>
+                </div><!-- container-nav -->
             </div>
         </div> <!-- fin du container -->
 

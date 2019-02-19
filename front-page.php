@@ -13,8 +13,8 @@
 <section class="section artiste" id="artiste">
     <div class="container-fluid">
         <h2 class="front-page-titre mb-text-center">L'artiste</h2><hr>
-        <div class="row">
-            <img src="<?php echo $theme_opts_artiste["image_artiste_url"] ?>" alt="photo de l'artiste" class="mb-width-100">
+        <img src="<?php echo $theme_opts_artiste["image_artiste_url"] ?>" alt="photo de l'artiste" class="mb-width-100">
+        <div class="mb-container-info-artiste col-md-4">
             <p class="mb-text-center"><strong><?php echo $theme_opts_artiste["accroche_artiste"] ?></strong></p>
             <p class="mb-text-center"><?php echo $theme_opts_artiste["bio_artiste"] ?></p>
         </div>

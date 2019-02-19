@@ -22,18 +22,17 @@
   position: absolute
 }
 .panel:before{
-  width: 150px;
-  height: 160px;
-  background-color: $orange;
-  position: absolute;
-  display: block;
-  content: ".";
-  color: $blanc;
-  top: 0;
-  left: 0;
-  border-left: 15px solid $blanc;
-  border-bottom: 15px solid #1b1b1b;
-  border-right: 15px solid #1b1b1b;
-  border-top: 15px solid $blanc;
-
-}
+   width: 150px;
+   height: 160px;
+   background-color: #1b1b1b;
+   position: absolute;
+   display: block;
+   content: ".";
+   color: $blanc;
+   top: 0;
+   left: 0;
+   border-left: 15px solid $blanc;
+   border-bottom: 15px solid #1b1b1b;
+   border-right: 15px solid #1b1b1b;
+   border-top: 15px solid $blanc;
+ }

@@ -47,7 +47,7 @@ Text Domain: marinabay
 hr {
   border-top-width: 3px;
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   width: 50%;
   border-color: #1f0700;
 }
@@ -60,9 +60,44 @@ hr {
   margin-bottom: 0;
 }
 
+.container-fluid {
+  padding: 0;
+}
+
 .header {
-  background-color: #822205;
-  padding: 40px 0;
+  background-image: url("assets/fond-header.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  padding: 80px 0;
+}
+
+.mb-container-nav {
+  position: absolute;
+  top: 336px;
+  right: 420px;
+}
+
+.mb-item-nav {
+  padding: 12px 15px 12px 30px;
+  background-color: #1b1b1b;
+}
+
+.mb-nav .navbar-light .navbar-nav a {
+  color: #fff !important;
+}
+
+.mb-item-nav:before {
+  width: 150px;
+  height: 64px;
+  background-color: #1b1b1b00;
+  position: absolute;
+  display: block;
+  content: ".";
+  color: #fff0;
+  top: 0;
+  right: -150px;
+  border-left: 30px solid #1b1b1b;
+  border-top: 30px solid #fff0;
 }
 
 .carousel-home {
@@ -78,6 +113,33 @@ hr {
 
 .carousel-indicators .active {
   background-color: #e82c04;
+}
+
+.artiste {
+  margin-top: 60px;
+}
+
+.mb-container-info-artiste {
+  position: absolute;
+  padding: 20px;
+  background-color: #1b1b1b;
+  color: #fff;
+  top: 1036px;
+  right: 232px;
+}
+
+.mb-container-info-artiste:before {
+  width: 150px;
+  height: 240px;
+  background-color: #1b1b1b00;
+  position: absolute;
+  display: block;
+  content: ".";
+  color: #fff0;
+  top: 0;
+  right: -150px;
+  border-left: 60px solid #1b1b1b;
+  border-top: 60px solid #fff0;
 }
 
 .panel h2 {
@@ -108,8 +170,8 @@ hr {
 
 .panel:before {
   width: 150px;
-  height: 200px;
-  background-color: #e82c04;
+  height: 160px;
+  background-color: #1b1b1b;
   position: absolute;
   display: block;
   content: ".";

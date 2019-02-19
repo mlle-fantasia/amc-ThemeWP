@@ -1,5 +1,28 @@
 @import "../Base/variableGobale";
 
 .artiste{
+  margin-top: 60px;
+}
 
+.mb-container-info-artiste{
+  position: absolute;
+  padding: 20px;
+  background-color: #1b1b1b;
+  color: $blanc;
+  top: 1036px;
+  right: 232px;
+}
+
+.mb-container-info-artiste:before{
+  width: 150px;
+  height: 240px;
+  background-color: #1b1b1b00;
+  position: absolute;
+  display: block;
+  content: ".";
+  color: #fff0;
+  top: 0;
+  right: -150px;
+  border-left: 60px solid #1b1b1b;
+  border-top: 60px solid #fff0;
 }
