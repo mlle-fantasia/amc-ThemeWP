@@ -4,7 +4,7 @@
         <div class="row">
 
             <div class="col-md-12">
-                <a href="/"><img src="<?php echo $theme_opts['image_01_url']; ?>" alt="<?php echo $theme_opts['legend_01']; ?>" class="mx-auto d-block"></a>
+                <a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/logo-blanc.png" alt="logo amc" class="mx-auto d-block"></a>
                 <nav class="navbar navbar-expand-lg navbar-light mb-text-center">
 
                     <?php

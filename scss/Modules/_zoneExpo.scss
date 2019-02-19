@@ -1,16 +1,45 @@
 @import "../Base/variableGobale";
 .expo{
-
+  display: flex;
 }
 .afficheExpo{
   width: 70%;
 }
 .mb-titreinfoExpo{
-  color: $orange;
+
 }
 h4{
   margin-bottom: 15px;
 }
+
+.container-image{
+
+
+}
+.container-image img{
+  height: 500px;
+  width: 100%;
+}
+
 .mb-infoExpo{
   padding: 20px 0;
+}
+.mb-infoExpo{
+  position: relative;
+}
+.mb-descriptionExpo{
+  position: absolute;
+  padding: 20px;
+  background-color: #1b1b1b;
+  color: $blanc;
+  top: -200px;
+  right: 302px;
+}
+
+.mb-dateExpo{
+  position: absolute;
+  padding: 20px;
+  background-color: #1b1b1b;
+  color: $blanc;
+  top: -200px;
 }

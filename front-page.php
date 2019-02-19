@@ -35,7 +35,9 @@ $my_query = new WP_Query($args);
 
 <section class=" section galerie" id="galerie">
     <div class="container">
+        <h2 class="front-page-titre mb-text-center">Galerie de tableaux</h2><hr>
         <div class="row">
+
 
             <?php
                 while($my_query ->have_posts()): $my_query ->the_post() ;
@@ -102,19 +104,17 @@ $my_query = new WP_Query($args);
         $titre = 'Prochaine exposition';
     }
     $contenu = '<section class="section expo" id="expo">
-                    <div class="container">
+                    <div class="container-fluid">
                         <h2 class="front-page-titre mb-text-center">'. $titre .'</h2><hr>
                         <h4 class="mb-text-center">'.$theme_opts["titre_expo"].'</h4>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <img src="'. $theme_opts["image_expo_url"].'" alt="'. $theme_opts["description_expo"].'" class="mb-width-100">
-                            </div>
-                        </div>    
+                        <div class="container-image">
+                            <img src="'. $theme_opts["image_expo_url"].'" alt="'. $theme_opts["description_expo"].'" class="mb-width-100"> 
+                        </div>   
                         <div class="row mb-infoExpo">
-                            <div class="col-md-8">
+                            <div class="col-md-2 mb-descriptionExpo">
                                 <p class="mb-text-center"><strong class="mb-titreinfoExpo">Description : </strong><br>'. $theme_opts["description_expo"].'</p>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2 mb-dateExpo">
                                 <p class="mb-text-center"><strong class="mb-titreinfoExpo">Date : </strong><br>  du '.$theme_opts["date_debut_expo"].' au '. $theme_opts["date_fin_expo"].'</p>
                                 <p class="mb-text-center"><strong class="mb-titreinfoExpo">Lieu : </strong><br>'. $theme_opts["lieu_expo"].'</p>  
                             </div>

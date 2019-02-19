@@ -1,7 +1,7 @@
 @import "../Base/variableGobale";
 
 .contact{
-  background-color: $orange-tres-clair;
+  margin-top: 60px;
 }
 
 .formContact{
@@ -25,19 +25,22 @@
 }
 
 div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
-  border: 2px solid $orange;
   border-radius: 5px;
-  background-color: #ff7f7f;
 }
 
 .mb-btn{
-
-  border: 1px solid $orange;
+  background-color: gray;
+  border: 1px solid #1b1b1b;
 }
 
 .mb-input:focus
 {
-  border-color: $orange;
+  border-color: #1b1b1b;
   outline: 0;
-  box-shadow: 0 0 2px 2px $orange-clair;
+  box-shadow: 0 0 2px 2px gray;
 }
+
+.form-control{
+
+}
+

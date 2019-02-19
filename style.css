@@ -142,6 +142,10 @@ hr {
   border-top: 60px solid #fff0;
 }
 
+.galerie {
+  margin-top: 60px;
+}
+
 .panel h2 {
   font-family: FontTitre;
   font-size: 27px;
@@ -184,32 +188,74 @@ hr {
   border-top: 15px solid #fff;
 }
 
-.afficheExpo {
-  width: 70%;
+.expo {
+  display: flex;
 }
 
-.mb-titreinfoExpo {
-  color: #e82c04;
+.afficheExpo {
+  width: 70%;
 }
 
 h4 {
   margin-bottom: 15px;
 }
 
+.container-image img {
+  height: 500px;
+  width: 100%;
+}
+
 .mb-infoExpo {
   padding: 20px 0;
 }
 
+.mb-infoExpo {
+  position: relative;
+}
+
+.mb-descriptionExpo {
+  position: absolute;
+  padding: 20px;
+  background-color: #1b1b1b;
+  color: #fff;
+  top: -200px;
+  right: 302px;
+}
+
+.mb-dateExpo {
+  position: absolute;
+  padding: 20px;
+  background-color: #1b1b1b;
+  color: #fff;
+  top: -200px;
+}
+
 .footer {
-  background-color: #822205;
+  background-color: #1b1b1b;
   padding: 40px;
 }
 
+.footer img {
+  width: 20%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #ffffff70;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
 .footer-barre {
-  color: #e07357;
-  background-color: #1f0700;
+  color: #ffffff70;
+  background-color: #101010;
   padding: 10px;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 .footer-barre p {
@@ -218,15 +264,15 @@ h4 {
 
 .footer-barre a {
   text-decoration: none;
-  color: #e07357;
+  color: #ffffff70;
 }
 
 .footer-barre a:hover {
-  color: #e82c04;
+  color: #fff;
 }
 
 .contact {
-  background-color: #ffb4a2;
+  margin-top: 60px;
 }
 
 .formContact {
@@ -250,17 +296,16 @@ h4 {
 }
 
 div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
-  border: 2px solid #e82c04;
   border-radius: 5px;
-  background-color: #ff7f7f;
 }
 
 .mb-btn {
-  border: 1px solid #e82c04;
+  background-color: gray;
+  border: 1px solid #1b1b1b;
 }
 
 .mb-input:focus {
-  border-color: #e82c04;
+  border-color: #1b1b1b;
   outline: 0;
-  box-shadow: 0 0 2px 2px #e07357;
+  box-shadow: 0 0 2px 2px gray;
 }
