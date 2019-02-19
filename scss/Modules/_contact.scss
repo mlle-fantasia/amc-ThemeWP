@@ -24,14 +24,14 @@
   width: 15%;
 }
 
-div.wpcf7-validation-errors {
+div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
   border: 2px solid $orange;
   border-radius: 5px;
   background-color: #ff7f7f;
 }
 
 .mb-btn{
-  background-color: $orange-clair;
+
   border: 1px solid $orange;
 }
 

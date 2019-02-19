@@ -10,6 +10,9 @@
             $section = 'contact';
             $titre = 'Contactez-moi';
         }
+        if($currentPage == 'http://amc/mentions-legales'){
+            $titre = 'Mentions légales';
+        }
     ?>
 
         <section class="section <?php echo $section; ?>">

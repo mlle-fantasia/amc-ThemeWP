@@ -72,7 +72,10 @@ function mb_setup(){
     add_theme_support('post-thumbnails');
 
     // creer format image slider front
-    add_image_size('front-slider', 1140, 420, true);
+//    add_image_size('front-slider', 1140, 420, true);
+
+    // creation du format d'image pour la galerie de tableau
+    add_image_size('tableau', 290, 290, true);
 
     //enlève le générateur de version
     remove_action('wp_head', 'wp_generator');
@@ -225,6 +228,30 @@ function mb_excerpt_more($more){
 add_filter('excerpt_more','mb_excerpt_more' );
 
 
+
+//=================================================================
+// ===========   modifie la taille de l'excerpt
+//=================================================================
+
+
+function the_excerpt_max_charlength($charlength) {
+    $excerpt = get_the_excerpt();
+    $charlength++;
+
+    if ( mb_strlen( $excerpt ) > $charlength ) {
+        $subex = mb_substr( $excerpt, 0, $charlength - 5 );
+        $exwords = explode( ' ', $subex );
+        $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+        if ( $excut < 0 ) {
+            echo mb_substr( $subex, 0, $excut );
+        } else {
+            echo $subex;
+        }
+        echo '[...]';
+    } else {
+        echo $excerpt;
+    }
+}
 
 //=================================================================
 // ===========  ajouter pagination

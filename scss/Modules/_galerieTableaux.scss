@@ -1,6 +1,39 @@
 @import "../Base/variableGobale";
 
-.galerie{
-  background-color: $orange-clair;
+.panel h2{
+  font-family: FontTitre ;
+  font-size: 27px;
 }
+.panel p {
+  font-weight: 100;
+}
+.panel{
+  padding: 15px;
+  margin: 30px 15px;
+  background-color: #1b1b1b;
+  position: relative;
+  display: block;
+}
+.panel-footer{
+  color: $blanc;
+  margin-top: 300px;
+}
+.panel img{
+  position: absolute
+}
+.panel:before{
+  width: 150px;
+  height: 160px;
+  background-color: $orange;
+  position: absolute;
+  display: block;
+  content: ".";
+  color: $blanc;
+  top: 0;
+  left: 0;
+  border-left: 15px solid $blanc;
+  border-bottom: 15px solid #1b1b1b;
+  border-right: 15px solid #1b1b1b;
+  border-top: 15px solid $blanc;
 
+}

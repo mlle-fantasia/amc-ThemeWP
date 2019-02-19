@@ -3,7 +3,7 @@
 
 
 <?php get_header(); ?>
-<?php get_template_part('slider', 'home'); ?>
+<?php //get_template_part('slider', 'home'); ?>
 
 <?php
     $theme_opts = get_option('mb_opts');
@@ -11,7 +11,7 @@
 
 ?>
 <section class="section artiste" id="artiste">
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="front-page-titre mb-text-center">L'artiste</h2><hr>
         <div class="row">
             <img src="<?php echo $theme_opts_artiste["image_artiste_url"] ?>" alt="photo de l'artiste" class="mb-width-100">
@@ -20,29 +20,77 @@
         </div>
     </div>
 </section>
+
+
+<?php
+$args= array(
+    'post_type' => 'post'
+
+);
+$my_query = new WP_Query($args);
+
+?>
+
+<?php if ( $my_query ->have_posts() ): ?>
+
 <section class=" section galerie" id="galerie">
     <div class="container">
-        <?php if (have_posts()):
-            while(have_posts()): the_post(); ?>
-                <div class="row">
-                    <div class="col-md-12">
+        <div class="row">
 
-                        <?php the_title('<h1>', '</h1>'); the_content(); ?>
+            <?php
+                while($my_query ->have_posts()): $my_query ->the_post() ;
+                $tableau_src = '';
+                if($image_html = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'tableau')) {
+                    $tableau_src = $image_html[0];
+                }
+            ?>
+                <div class="col-md-4 col-sm-6">
+                    <div class="panel">
+                        <div class="panel-image">
+                            <img src="<?php echo $tableau_src ?>" alt="image du tableau <?php echo $tableau_src; ?>">
+    <!--                        --><?php //the_post_thumbnail('medium', array('class'=>'mb-width-100')) ?>
+                        </div>
+                        <div class="panel-footer">
+                            <h2 class="mb-text-center"><?php the_title(); ?></h2>
+                            <p class="mb-text-center"><?php the_excerpt_max_charlength(140); ?></p>
+
+                        </div>
                     </div>
-                </div>
-           <?php endwhile; ?>
 
-        <?php else:?>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>
-                        pas d'articles ici
-                    </p>
                 </div>
-            </div>
-        <?php endif; ?>
+
+            <?php endwhile; ?>
+
+        </div>
     </div><!-- /container -->
 </section>
+
+<?php endif; ?>
+
+
+<!--<section class=" section galerie" id="galerie">-->
+<!--    <div class="container">-->
+<!--        --><?php //if (have_posts()):
+//            while(have_posts()): the_post(); ?>
+<!--                <div class="row">-->
+<!--                    <div class="col-md-12">-->
+<!---->
+<!--                        --><?php //the_title('<h1>', '</h1>'); the_content(); ?>
+<!--                    </div>-->
+<!--                </div>-->
+<!--           --><?php //endwhile; ?>
+<!---->
+<!--        --><?php //else:?>
+<!--            <div class="row">-->
+<!--                <div class="col-md-12">-->
+<!--                    <p>-->
+<!--                        pas d'articles ici-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        --><?php //endif; ?>
+<!--    </div><!-- /container -->
+<!--</section>-->
 
 
 <?php

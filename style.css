@@ -80,16 +80,46 @@ hr {
   background-color: #e82c04;
 }
 
-.artiste {
+.panel h2 {
+  font-family: FontTitre;
+  font-size: 27px;
+}
+
+.panel p {
+  font-weight: 100;
+}
+
+.panel {
+  padding: 15px;
+  margin: 30px 15px;
+  background-color: #1b1b1b;
+  position: relative;
+  display: block;
+}
+
+.panel-footer {
+  color: #fff;
+  margin-top: 300px;
+}
+
+.panel img {
+  position: absolute;
+}
+
+.panel:before {
+  width: 150px;
+  height: 200px;
   background-color: #e82c04;
-}
-
-.galerie {
-  background-color: #e07357;
-}
-
-.expo {
-  background-color: #ffb4a2;
+  position: absolute;
+  display: block;
+  content: ".";
+  color: #fff;
+  top: 0;
+  left: 0;
+  border-left: 15px solid #fff;
+  border-bottom: 15px solid #1b1b1b;
+  border-right: 15px solid #1b1b1b;
+  border-top: 15px solid #fff;
 }
 
 .afficheExpo {
@@ -157,14 +187,13 @@ h4 {
   width: 15%;
 }
 
-div.wpcf7-validation-errors {
+div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
   border: 2px solid #e82c04;
   border-radius: 5px;
   background-color: #ff7f7f;
 }
 
 .mb-btn {
-  background-color: #e07357;
   border: 1px solid #e82c04;
 }
 
