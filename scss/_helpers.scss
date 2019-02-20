@@ -13,3 +13,15 @@
 .wp-block-image img{
   height: auto;
 }
+
+.dropdown-menu{
+  border-radius: 0;
+  background-color: #272626;
+}
+
+.dropdown-menu a:hover {
+  background-color: #1b1b1b;
+}
+.dropdown-toggle::after{
+  transform: rotate(45deg);
+}

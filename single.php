@@ -5,47 +5,40 @@
 
 
 <section>
-    <div class="container">
+    <div class="container-fluid singleTableau">
         <?php if (have_posts()): ?>
             <?php  while(have_posts()): the_post(); ?>
-
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h1><?php the_title() ?></h1>
-                        <p>
-                            <?php
-                                echo mb_get_meta_date_cat(  esc_attr(get_the_date('c')), //récupère la date au format iso
-                                                            esc_html(get_the_date()),      //récupère la date au format demandé dans wp
-                                                            get_the_category_list(', '), //récupère la liste des cat de l'article sous forme de lien
-                                                            get_the_tag_list('', ', '));  //récupère la liste des tag de l'article sous forme de lien
-                            ?>
-                        </p>
-
-                        <?php
-                        if($thumbnail_html = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')):
-                            $thumbnail_src = $thumbnail_html[0];
-                            ?>
-                            <img src="<?php echo $thumbnail_src ?>" alt="image principale de l'article" class="img_100">
-                        <?php endif; ?>
-
-                        <p>
-                            <?php the_content() ?>
-                        </p>
-                    </div>
-                </div><!-- /row -->
-            <?php endwhile; ?>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <nav>
-                        <ul class="marinabay-pager">
-                            <li class="float-left"><?php previous_post_link(); ?></li>
-                            <li class="float-right"><?php next_post_link(); ?></li>
-                        </ul>
-                    </nav>
-                </div>
+        <div class="container">
+            <div class="titre">
+                <div class="titreItem"><h1 class="front-page-titre mb-text-center"><?php the_title() ?></h1> <hr></div>
             </div>
+        </div>
+    </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12 containerImage">
+
+                    <?php
+                    if($thumbnail_html = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')):
+                        $thumbnail_src = $thumbnail_html[0];
+                        ?>
+                        <img src="<?php echo $thumbnail_src ?>" alt="image principale de l'article" class="img_100">
+                    <?php endif; ?>
+                </div>
+            </div><!-- /row -->
+        <?php endwhile; ?>
+
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                <nav>-->
+<!--                    <ul class="marinabay-pager">-->
+<!--                        <li class="float-left">--><?php //previous_post_link(); ?><!--</li>-->
+<!--                        <li class="float-right">--><?php //next_post_link(); ?><!--</li>-->
+<!--                    </ul>-->
+<!--                </nav>-->
+<!--            </div>-->
+<!--        </div>-->
 
 
 
@@ -59,6 +52,32 @@
             </div>
         <?php endif; ?>
     </div><!-- /container -->
+
+    <div class="container-fluid singleTableau">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 containerInfoTableau">
+                    <p>
+                        <?php
+                        echo mb_get_meta_date_cat(  esc_attr(get_the_date('c')), //récupère la date au format iso
+                            esc_html(get_the_date()),      //récupère la date au format demandé dans wp
+                            get_the_category_list(', '), //récupère la liste des cat de l'article sous forme de lien
+                            get_the_tag_list('', ', '));  //récupère la liste des tag de l'article sous forme de lien
+                        ?>
+                    </p>
+                    <p><?php the_content() ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+
+    <?php get_template_part('slider', 'galerie'); ?>
+
+
 </section>
 
 <?php if (get_footer()) ?>

@@ -23,6 +23,19 @@ Text Domain: marinabay
   height: auto;
 }
 
+.dropdown-menu {
+  border-radius: 0;
+  background-color: #272626;
+}
+
+.dropdown-menu a:hover {
+  background-color: #1b1b1b;
+}
+
+.dropdown-toggle::after {
+  transform: rotate(45deg);
+}
+
 /***********  Les couleurs  *************/
 /****************************************/
 /***********  typographie  *************/
@@ -38,6 +51,10 @@ Text Domain: marinabay
   color: #1f0700;
   padding: 20px 0 0 0;
   margin-bottom: 0;
+}
+
+h1 {
+  color: black;
 }
 
 .section {
@@ -414,4 +431,42 @@ div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
   border-color: #1b1b1b;
   outline: 0;
   box-shadow: 0 0 2px 2px gray;
+}
+
+.singleTableau {
+  background-color: #1b1b1b;
+  margin-top: 3px;
+}
+
+.singleTableau .front-page-titre {
+  color: #fff;
+}
+
+.singleTableau .titreItem {
+  padding: 30px 0 30px 0;
+}
+
+.singleTableau hr {
+  border-color: #fff;
+}
+
+.singleTableau p {
+  color: #fff;
+  text-align: center;
+}
+
+.containerImage {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.containerInfoTableau {
+  padding: 30px 0;
+}
+
+.masonry {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }

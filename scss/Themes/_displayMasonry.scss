@@ -1,0 +1,8 @@
+@import "../Base/variableGobale";
+
+.masonry{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}

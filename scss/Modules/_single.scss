@@ -1,0 +1,31 @@
+@import "../Base/variableGobale";
+
+
+.singleTableau{
+  background-color: #1b1b1b;
+  margin-top: 3px;
+}
+
+.singleTableau .front-page-titre{
+  color: $blanc;
+}
+
+.singleTableau .titreItem{
+  padding: 30px 0 30px 0;
+}
+
+.singleTableau hr{
+  border-color: $blanc;
+}
+
+.singleTableau p{
+  color: $blanc;
+  text-align: center;
+}
+.containerImage{
+  text-align: center;
+  margin: 60px 0;
+}
+.containerInfoTableau{
+  padding: 30px 0;
+}

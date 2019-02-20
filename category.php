@@ -11,9 +11,9 @@
 
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">
-                    Archive de la catégorie <?php single_cat_title('', true); ?>
-                </p>
+                <h2 class="front-page-titre mb-text-center">
+                    Les <?php single_cat_title('', true); ?>
+                </h2><hr>
             </div>
         </div>
 
