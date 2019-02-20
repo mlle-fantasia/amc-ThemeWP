@@ -32,7 +32,7 @@ $wp_query   = $my_query;
 
 <div class="container-fluid" id="slideGalerie">
     <div class="row">
-        <input type="text" value="<?php echo $paged ?>" >
+        <input type="text" id="nbPosts" value="<?php echo $my_query->found_posts?>" hidden >
         <div class="containerSliderGalerie <?php echo $paged ?>">
         <div class="page prec" id="precedent">
             Tableaux précédents
@@ -74,9 +74,6 @@ $wp_query   = $my_query;
 <?php endif;
 wp_reset_postdata();
 
-
-previous_posts_link('Tableaux précédents');
-next_posts_link( 'Tableaux suivants' , $my_query->max_num_pages );
 
 // Reset main query object
 $wp_query = NULL;

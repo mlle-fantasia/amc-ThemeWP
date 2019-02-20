@@ -469,6 +469,7 @@ div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
   flex-direction: row;
   align-items: center;
   margin: auto;
+  padding-bottom: 60px;
 }
 
 .containerSliderGalerie .page {
