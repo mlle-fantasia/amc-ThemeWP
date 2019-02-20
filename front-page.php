@@ -25,9 +25,10 @@
 
 
 <?php
+$paged = (get_query_var ('paged'))? get_query_var ('paged'): 1;
 $args= array(
-    'post_type' => 'post'
-
+    'post_type' => 'post',
+    'paged' => $paged
 );
 $my_query = new WP_Query($args);
 
@@ -65,6 +66,7 @@ $my_query = new WP_Query($args);
 <!--                </div>-->
 
             <?php endwhile; ?>
+
 
         </div>
     </div><!-- /container -->

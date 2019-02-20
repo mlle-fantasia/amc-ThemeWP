@@ -464,6 +464,24 @@ div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
   padding: 30px 0;
 }
 
+.containerSliderGalerie {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
+.containerSliderGalerie .page {
+  cursor: pointer;
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 10px;
+}
+
+.containerSliderGalerie .panel {
+  margin: 0 30px;
+}
+
 .masonry {
   display: flex;
   flex-direction: column;

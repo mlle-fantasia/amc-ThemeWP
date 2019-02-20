@@ -257,11 +257,11 @@ function the_excerpt_max_charlength($charlength) {
 // ===========  ajouter pagination
 //=================================================================
 
-function mb_pagination()
+function mb_pagination($myQuery)
 {
-    global $wp_query;
+    //global $wp_query;
     $big = 999999999; // need an unlikely intege
-    $total_page = $wp_query->max_num_pages;
+    $total_page = $myQuery->max_num_pages;
 
     if ($total_page > 1): ?>
         <div class="col-md-12 mb-pagination">

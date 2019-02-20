@@ -1,0 +1,17 @@
+.containerSliderGalerie{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+.containerSliderGalerie .page{
+  cursor: pointer;
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 10px;
+}
+
+.containerSliderGalerie .panel{
+  margin: 0 30px;
+}
+

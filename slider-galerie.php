@@ -1,40 +1,85 @@
-<div class="container-fluid">
+<?php
+
+
+if ( get_query_var('paged') ) {
+    $paged = get_query_var('paged');
+} elseif ( get_query_var('page') ) { // 'page' is used instead of 'paged' on Static Front Page
+    $paged = get_query_var('page');
+} else {
+    $paged = 1;
+}
+
+$args= array(
+    'paged' => $paged,
+    'post_type' => 'post',
+    'posts_per_page' => 4,
+    'order' => 'DESC', // 'ASC'
+    'orderby' => 'date' // modified | title | name | ID | rand
+);
+
+$my_query = new WP_Query($args);
+
+// Pagination fix
+$temp_query = $wp_query;
+$wp_query   = NULL;
+$wp_query   = $my_query;
+?>
+
+
+
+
+<?php if ( $my_query ->have_posts() ): ?>
+
+<div class="container-fluid" id="slideGalerie">
     <div class="row">
-        <div class="">
+        <input type="text" value="<?php echo $paged ?>" >
+        <div class="containerSliderGalerie <?php echo $paged ?>">
+        <div class="page prec" id="precedent">
+            Tableaux précédents
+        </div>
+            <?php
+            while($my_query ->have_posts()):
+                $my_query ->the_post();
+                $tableau_src = '';
+                if($image_html = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'tableau')) {
+                    $tableau_src = $image_html[0];
+                }
 
+                ?>
 
-            <div id="slider-01" class="carousel slide" data-ridexxx="carousel">
+                <div class="panel">
 
-                <div class="carousel-inner">
-
-                    <div class="carousel-item active">
-
-                        <img class="d-block w-100" src="..." alt="First slide">
-
+                    <div class="panel-image">
+                        <a href="<?php the_permalink(); ?>"><img src="<?php echo $tableau_src ?>" alt="image du tableau <?php echo $tableau_src; ?>"></a>
+                        <!--                        --><?php //the_post_thumbnail('medium', array('class'=>'mb-width-100')) ?>
+                    </div>
+                    <div class="panel-footer">
+                        <h2 class="mb-text-center"><?php the_title(); ?></h2>
 
                     </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="..." alt="Second slide">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="..." alt="Third slide">
-                    </div>
-
                 </div>
 
-                <a class="carousel-control-prev" href="#slider-01" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#slider-01" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+
+            <?php endwhile; ?>
+            <div class="page suiv" id="suivant">
+                Tableaux suivants
             </div>
 
-
         </div>
+
     </div>
+<!--    --><?php //mb_pagination($my_query); ?>
 </div>
+
+<?php endif;
+wp_reset_postdata();
+
+
+previous_posts_link('Tableaux précédents');
+next_posts_link( 'Tableaux suivants' , $my_query->max_num_pages );
+
+// Reset main query object
+$wp_query = NULL;
+$wp_query = $temp_query;
+
+?>
