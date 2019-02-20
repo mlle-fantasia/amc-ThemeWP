@@ -31,7 +31,7 @@
         <div class="container">
             <?php $theme_opts = get_option('mb_opts'); ?>
             <div class="row">
-                <div class="">
+                <div class="col-md-7">
                     <a href="/"><img src="<?php echo $theme_opts['image_01_url']; ?>" alt=""></a>
                 </div>
                 <div class="mb-container-nav">

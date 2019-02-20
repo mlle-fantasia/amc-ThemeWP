@@ -9,9 +9,7 @@
 .titre-admin{
     text-align: center;
     padding: 20px;
-    background-color: #f36e53;
-    border-radius: 5px 5px;
-    border-bottom: #ec5700 solid 3px;
+    background-color: #1b1b1b;
     margin: 20px 0;
 }
 
@@ -33,6 +31,7 @@ h1, h2, h3{
 }
 .sous-titre{
     font-size: 25px;
+    color: #fff;
 }
 .petit-titre{
     font-size: 20px;

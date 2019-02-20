@@ -5,11 +5,16 @@
   background-attachment: fixed;
   background-position: center;
   padding: 80px 0;
+  position: relative;
+}
+
+.header img{
+  width: 100%;
 }
 
 .mb-container-nav{
   position: absolute;
-  top: 336px;
+  bottom: 0;
   right: 420px;
 }
 .mb-nav a{
@@ -33,7 +38,7 @@
   content: ".";
   color: #fff0;
   top: 0;
-  right: -150px;
+  right: -149px;
   border-left: 30px solid #1b1b1b;
   border-top: 30px solid #fff0;
 }

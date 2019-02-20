@@ -3,6 +3,14 @@
 .galerie{
   margin-top: 60px;
 }
+
+.container-panels{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .panel h2{
   font-family: FontTitre ;
   font-size: 27px;
@@ -16,6 +24,7 @@
   background-color: #1b1b1b;
   position: relative;
   display: block;
+  width: 320px;
 }
 .panel-footer{
   color: $blanc;

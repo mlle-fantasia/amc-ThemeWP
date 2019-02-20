@@ -69,11 +69,16 @@ hr {
   background-attachment: fixed;
   background-position: center;
   padding: 80px 0;
+  position: relative;
+}
+
+.header img {
+  width: 100%;
 }
 
 .mb-container-nav {
   position: absolute;
-  top: 336px;
+  bottom: 0;
   right: 420px;
 }
 
@@ -95,7 +100,7 @@ hr {
   content: ".";
   color: #fff0;
   top: 0;
-  right: -150px;
+  right: -149px;
   border-left: 30px solid #1b1b1b;
   border-top: 30px solid #fff0;
 }
@@ -119,31 +124,46 @@ hr {
   margin-top: 60px;
 }
 
+.infoArtiste {
+  position: relative;
+}
+
+.infoArtiste .container {
+  margin-bottom: 0;
+}
+
 .mb-container-info-artiste {
   position: absolute;
   padding: 20px;
   background-color: #1b1b1b;
   color: #fff;
-  top: 1036px;
-  right: 232px;
+  right: 227px;
+  bottom: 0;
 }
 
 .mb-container-info-artiste:before {
   width: 150px;
-  height: 240px;
+  height: 100%;
   background-color: #1b1b1b00;
   position: absolute;
   display: block;
   content: ".";
   color: #fff0;
   top: 0;
-  right: -150px;
+  right: -149px;
   border-left: 60px solid #1b1b1b;
   border-top: 60px solid #fff0;
 }
 
 .galerie {
   margin-top: 60px;
+}
+
+.container-panels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .panel h2 {
@@ -161,6 +181,7 @@ hr {
   background-color: #1b1b1b;
   position: relative;
   display: block;
+  width: 320px;
 }
 
 .panel-footer {
@@ -271,6 +292,91 @@ h4 {
   color: #fff;
 }
 
+@media screen and (min-width: 2100px) {
+  /**************** Artiste **********************/
+  .mb-container-info-artiste p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  /**************** header **********************/
+  .mb-container-nav {
+    right: 244px;
+  }
+
+  /**************** Artiste **********************/
+  .mb-container-info-artiste {
+    max-height: 100%;
+    background-color: rgba(27, 27, 27, 0.78);
+  }
+
+  .mb-container-info-artiste:before {
+    display: none;
+  }
+}
+@media screen and (max-width: 1100px) {
+  /**************** artiste **********************/
+  .mb-container-info-artiste {
+    right: 100px;
+  }
+}
+@media screen and (max-width: 992px) {
+  /**************** header **********************/
+  .mb-container-nav {
+    right: 133px;
+  }
+
+  .mb-item-nav:before {
+    display: none;
+  }
+
+  .mb-item-nav {
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 975px) {
+  /**************** artiste **********************/
+  .mb-container-info-artiste p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /**************** header **********************/
+}
+@media screen and (max-width: 660px) {
+  /**************** artiste **********************/
+  .mb-container-info-artiste {
+    right: 50px;
+  }
+}
+@media screen and (max-width: 585px) {
+  /**************** artiste **********************/
+  .mb-container-info-artiste {
+    right: 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  /**************** header **********************/
+  .mb-container-nav {
+    right: 30px;
+  }
+
+  .mb-container-info-artiste {
+    position: relative;
+    background-color: #1b1b1b;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 392px) {
+  /**************** galerie **********************/
+  .panel img {
+    width: 90%;
+  }
+
+  .panel-footer {
+    margin-top: 270px;
+  }
+}
 .contact {
   margin-top: 60px;
 }

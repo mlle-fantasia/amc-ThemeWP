@@ -13,10 +13,12 @@
 <section class="section artiste" id="artiste">
     <div class="container-fluid">
         <h2 class="front-page-titre mb-text-center">L'artiste</h2><hr>
-        <img src="<?php echo $theme_opts_artiste["image_artiste_url"] ?>" alt="photo de l'artiste" class="mb-width-100">
-        <div class="mb-container-info-artiste col-md-4">
-            <p class="mb-text-center"><strong><?php echo $theme_opts_artiste["accroche_artiste"] ?></strong></p>
-            <p class="mb-text-center"><?php echo $theme_opts_artiste["bio_artiste"] ?></p>
+        <div class="infoArtiste">
+            <img src="<?php echo $theme_opts_artiste["image_artiste_url"] ?>" alt="photo de l'artiste" class="mb-width-100">
+            <div class="container mb-container-info-artiste col-md-4">
+                <p class="mb-text-center"><strong><?php echo $theme_opts_artiste["accroche_artiste"] ?></strong></p>
+                <p class="mb-text-center"><?php echo $theme_opts_artiste["bio_artiste"] ?></p>
+            </div>
         </div>
     </div>
 </section>
@@ -36,7 +38,7 @@ $my_query = new WP_Query($args);
 <section class=" section galerie" id="galerie">
     <div class="container">
         <h2 class="front-page-titre mb-text-center">Galerie de tableaux</h2><hr>
-        <div class="row">
+        <div class="row container-panels">
 
 
             <?php
@@ -46,8 +48,9 @@ $my_query = new WP_Query($args);
                     $tableau_src = $image_html[0];
                 }
             ?>
-                <div class="col-md-4 col-sm-6">
+<!--                <div class="col-md-4 col-sm-6">-->
                     <div class="panel">
+
                         <div class="panel-image">
                             <img src="<?php echo $tableau_src ?>" alt="image du tableau <?php echo $tableau_src; ?>">
     <!--                        --><?php //the_post_thumbnail('medium', array('class'=>'mb-width-100')) ?>
@@ -59,7 +62,7 @@ $my_query = new WP_Query($args);
                         </div>
                     </div>
 
-                </div>
+<!--                </div>-->
 
             <?php endwhile; ?>
 
