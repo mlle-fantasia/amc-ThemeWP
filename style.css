@@ -81,6 +81,14 @@ hr {
   padding: 0;
 }
 
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #cacaca;
+}
+
 .header {
   background-image: url("assets/fond-header.jpg");
   background-attachment: fixed;

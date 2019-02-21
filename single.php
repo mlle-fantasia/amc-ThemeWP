@@ -29,18 +29,6 @@
             </div><!-- /row -->
         <?php endwhile; ?>
 
-<!--        <div class="row">-->
-<!--            <div class="col-md-12">-->
-<!--                <nav>-->
-<!--                    <ul class="marinabay-pager">-->
-<!--                        <li class="float-left">--><?php //previous_post_link(); ?><!--</li>-->
-<!--                        <li class="float-right">--><?php //next_post_link(); ?><!--</li>-->
-<!--                    </ul>-->
-<!--                </nav>-->
-<!--            </div>-->
-<!--        </div>-->
-
-
 
         <?php else:?>
             <div class="row">
@@ -57,15 +45,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 containerInfoTableau">
+                    <p><?php the_content() ?></p><hr>
                     <p>
                         <?php
-                        echo mb_get_meta_date_cat(  esc_attr(get_the_date('c')), //récupère la date au format iso
-                            esc_html(get_the_date()),      //récupère la date au format demandé dans wp
-                            get_the_category_list(', '), //récupère la liste des cat de l'article sous forme de lien
-                            get_the_tag_list('', ', '));  //récupère la liste des tag de l'article sous forme de lien
+                            echo mb_get_meta_date_cat(  esc_attr(get_the_date('c')), //récupère la date au format iso
+                                esc_html(get_the_date()),      //récupère la date au format demandé dans wp
+                                get_the_category_list(', '), //récupère la liste des cat de l'article sous forme de lien
+                                get_the_tag_list('', ', '));  //récupère la liste des tag de l'article sous forme de lien
                         ?>
                     </p>
-                    <p><?php the_content() ?></p>
+
                 </div>
             </div>
         </div>

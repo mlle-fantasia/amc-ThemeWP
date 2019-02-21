@@ -205,11 +205,11 @@ add_action('widgets_init', 'mb_admin_widget');
 
 function mb_get_meta_date_cat($date1, $date2, $cat, $tags){
 
-    $chaine = 'publié le <time class="entry-date" datetime="';
+    $chaine = 'Publié le <time class="entry-date" datetime="';
     $chaine .= $date1;
     $chaine .= '">';
     $chaine .= $date2;
-    $chaine .= '</time> dans la catégorie : ';
+    $chaine .= ',</time><br> Dans la catégorie : ';
     $chaine .= $cat;
     if(strlen($tags)>0):
         $chaine .= ' avec les étiquettes : '.$tags;

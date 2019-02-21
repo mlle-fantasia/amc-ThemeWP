@@ -53,7 +53,7 @@ $my_query = new WP_Query($args);
                     <div class="panel">
 
                         <div class="panel-image">
-                            <a href="<?php the_permalink(); ?>"><img src="<?php echo $tableau_src ?>" alt="image du tableau <?php echo $tableau_src; ?>"></a>
+                            <a href="<?php the_permalink(); ?>"><img src="<?php echo $tableau_src; ?>" alt="image du tableau <?php echo $tableau_src; ?>"></a>
     <!--                        --><?php //the_post_thumbnail('medium', array('class'=>'mb-width-100')) ?>
                         </div>
                         <div class="panel-footer">
