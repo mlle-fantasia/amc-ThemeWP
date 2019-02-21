@@ -36,12 +36,18 @@ jQuery(document).ready(function($){
     });
 
 
-    //========  récupère le nb de post et nb de post
-    //========  par page pour calculer la dernière page
+    //========  récupère le nb de post et nb de post par page
+    //========  pour calculer la dernière page
     //================================================
+    let dernierePage = '';
     let nbPosts = $('#nbPosts').val();
-    // let nbPostsParPage = $('#nbPostsParPage').val();
-    let nbPageMax = (Math.trunc(nbPosts/4))+1;
+    let nbPostsParPage = $('#nbPostsParPage').val();
+    if((nbPosts%nbPostsParPage)=== 0){
+        dernierePage = nbPosts/nbPostsParPage;
+    }else{
+        dernierePage = (Math.trunc(nbPosts/nbPostsParPage))+1;
+    }
+
 
 
     //========  faire a pparaitre les bon bouton de contrle des page en fonction de la taille d'écran :
@@ -66,9 +72,11 @@ jQuery(document).ready(function($){
         $('.prec').css('color', '#3A3A3A');
         $('.prec').prop("disabled",true);
     }
-    // if(lastLettre === String(nbPageMax)){
-    //     $('.suiv').css('color', '#3A3A3A');
-    // }
+
+    if(param.Page === String(dernierePage)){
+        $('.suiv').prop("disabled",true);
+        $('.suiv').css('color', '#3A3A3A');
+    }
 
 
     //========  gestion des clic de changemant de page galerie
@@ -77,7 +85,7 @@ jQuery(document).ready(function($){
     $('.suivant').click(function(){
 
         if(param.Page){
-            let pages = {'1':2,'2':3, '3':4, '4':5, '5':6, '6':7,};
+            let pages = {'1':2,'2':3, '3':4, '4':5, '5':6, '6':7, '7':8, '8':9, '9':10, '10':11, '11':12, '12':13, '13':14, '14':15, '15':16,'16':17,'17':18,'18':19,'19':20,};
             let pageSuivante = pages[param.Page];
             let url = 'http://' + window.location.hostname + window.location.pathname;
             console.log(param);
@@ -92,7 +100,7 @@ jQuery(document).ready(function($){
     $('.precedent').click(function(){
 
         if(param.Page && param.Page !== '1'){
-            let pages = {'2':1, '3':2, '4':3, '5':4, '6':5,};
+            let pages = {'2':1, '3':2, '4':3, '5':4, '6':5, '7':6, '8':7, '9':8, '10':9, '11':10, '12':11, '13':12, '14':13, '15':14,'16':15,'17':16,'18':17,'19':18,};
             let pageSuivante = pages[param.Page];
             let url = 'http://' + window.location.hostname + window.location.pathname;
             console.log(param);

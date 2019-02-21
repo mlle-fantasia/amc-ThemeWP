@@ -5,10 +5,7 @@ if(!isset($_GET['r']))
 {
     echo "<script language=\"JavaScript\"> document.location=\"$PHP_SELF?r=1&Largeur=\"+screen.width;</script>";
 }
-else if($_GET['Largeur']!= "<script language=\"JavaScript\">screen.width</script>") {
-//    echo "<script language=\"JavaScript\"> document.location=\"$PHP_SELF?r=1&Largeur=\"+screen.width;</script>";
-//    $_GET['Largeur']= "<script language=\"JavaScript\">screen.width</script>";
-}
+
 // Code à afficher en cas de détection de la résolution d'affichage
     if (isset($_GET['Largeur'])) {
 // Résolution détectée
@@ -29,7 +26,7 @@ else if($_GET['Largeur']!= "<script language=\"JavaScript\">screen.width</script
         $postsParPage = 4;
     }
 
-
+// calcule de l'offset en fonction du numéro de la page dans l'url
 if(isset($_GET['Page'])) {
     $page = (int)$_GET['Page'];
     $offsetTableau = $postsParPage*($page-1);
@@ -51,9 +48,6 @@ $temp_query = $wp_query;
 $wp_query   = NULL;
 $wp_query   = $my_query;
 
-if ($_GET['Largeur'] < 700) {
-    $controlPages = "none";
-}
 
 ?>
 <?php if ( $my_query ->have_posts() ): ?>
@@ -61,7 +55,7 @@ if ($_GET['Largeur'] < 700) {
 <div class="container-fluid" id="slideGalerie">
     <div class="row">
         <input type="text" id="nbPosts" value="<?php echo $my_query->found_posts?>" hidden >
-        <input type="text" id="nbPostsParPage" value="<?php echo $my_query->posts_per_page?>" hidden >
+        <input type="text" id="nbPostsParPage" value="<?php echo $my_query->query_vars['posts_per_page'] ?>" hidden >
         <div class="containerSliderGalerie <?php echo $paged ?>">
 
         <button class="page prec precedent" id="">
@@ -99,6 +93,7 @@ if ($_GET['Largeur'] < 700) {
 
     </div>
 
+<!--    boutton de controle de page galerie pour des écrans de moins de 700px-->
     <div class="row containerControlPage700">
         <button class="page prec700 precedent" id="">
             Tableaux suivants
@@ -107,7 +102,7 @@ if ($_GET['Largeur'] < 700) {
             Tableaux suivants
         </button>
     </div>
-<!--    --><?php //mb_pagination($my_query); ?>
+
 </div>
 
 <?php endif;
