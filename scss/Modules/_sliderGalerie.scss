@@ -5,7 +5,7 @@
   margin: auto;
   padding-bottom: 60px;
 }
-.containerSliderGalerie .page{
+.page{
   cursor: pointer;
   background-color: #1b1b1b;
   color: #fff;
@@ -16,3 +16,22 @@
   margin: 0 30px;
 }
 
+.containerSliderGalerie button{
+  border: 0;
+}
+
+.containerControlPage700{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.containerControlPage700 .page{
+  margin: 10px 10px 20px 10px;
+}
+
+#slideGalerie{
+  width: 100vw;
+  padding: 0 15px;
+}

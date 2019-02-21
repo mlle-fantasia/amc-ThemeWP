@@ -1,18 +1,45 @@
 <?php
 
+$postsParPage = '';
+if(!isset($_GET['r']))
+{
+    echo "<script language=\"JavaScript\"> document.location=\"$PHP_SELF?r=1&Largeur=\"+screen.width;</script>";
+}
+else if($_GET['Largeur']!= "<script language=\"JavaScript\">screen.width</script>") {
+//    echo "<script language=\"JavaScript\"> document.location=\"$PHP_SELF?r=1&Largeur=\"+screen.width;</script>";
+//    $_GET['Largeur']= "<script language=\"JavaScript\">screen.width</script>";
+}
+// Code à afficher en cas de détection de la résolution d'affichage
+    if (isset($_GET['Largeur'])) {
+// Résolution détectée
+        if ($_GET['Largeur'] > 1780) {
+            $postsParPage = 4;
+        }
+        if ($_GET['Largeur'] < 1780) {
+            $postsParPage = 3;
+        }
+        if ($_GET['Largeur'] < 1250) {
+            $postsParPage = 2;
+        }
+        if ($_GET['Largeur'] < 1000) {
+            $postsParPage = 1;
+        }
+    } else {
+// Résolution non détectée
+        $postsParPage = 4;
+    }
 
-if ( get_query_var('paged') ) {
-    $paged = get_query_var('paged');
-} elseif ( get_query_var('page') ) { // 'page' is used instead of 'paged' on Static Front Page
-    $paged = get_query_var('page');
-} else {
-    $paged = 1;
+
+if(isset($_GET['Page'])) {
+    $page = (int)$_GET['Page'];
+    $offsetTableau = $postsParPage*($page-1);
 }
 
 $args= array(
     'paged' => $paged,
     'post_type' => 'post',
-    'posts_per_page' => 4,
+    'posts_per_page' => $postsParPage,
+    'offset' => $offsetTableau,
     'order' => 'DESC', // 'ASC'
     'orderby' => 'date' // modified | title | name | ID | rand
 );
@@ -23,20 +50,23 @@ $my_query = new WP_Query($args);
 $temp_query = $wp_query;
 $wp_query   = NULL;
 $wp_query   = $my_query;
+
+if ($_GET['Largeur'] < 700) {
+    $controlPages = "none";
+}
+
 ?>
-
-
-
-
 <?php if ( $my_query ->have_posts() ): ?>
 
 <div class="container-fluid" id="slideGalerie">
     <div class="row">
         <input type="text" id="nbPosts" value="<?php echo $my_query->found_posts?>" hidden >
+        <input type="text" id="nbPostsParPage" value="<?php echo $my_query->posts_per_page?>" hidden >
         <div class="containerSliderGalerie <?php echo $paged ?>">
-        <div class="page prec" id="precedent">
+
+        <button class="page prec precedent" id="">
             Tableaux précédents
-        </div>
+        </button>
             <?php
             while($my_query ->have_posts()):
                 $my_query ->the_post();
@@ -61,12 +91,21 @@ $wp_query   = $my_query;
 
 
             <?php endwhile; ?>
-            <div class="page suiv" id="suivant">
+            <button class="page suiv suivant" id="">
                 Tableaux suivants
-            </div>
+            </button>
 
         </div>
 
+    </div>
+
+    <div class="row containerControlPage700">
+        <button class="page prec700 precedent" id="">
+            Tableaux suivants
+        </button>
+        <button class="page suiv700 suivant" id="">
+            Tableaux suivants
+        </button>
     </div>
 <!--    --><?php //mb_pagination($my_query); ?>
 </div>

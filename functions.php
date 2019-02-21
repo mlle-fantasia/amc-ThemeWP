@@ -361,3 +361,18 @@ function mb_content_show($column, $post_id){
     }
 }
 add_action('pre_get_posts', 'mb_change_slides_ordrer');
+
+
+//=================================================================
+// ===========  récupère la résolition de l'écran
+//=================================================================
+
+function mb_get_resolution() {
+    $tabResol = array('width' => '' , 'height' => '');
+    $resol='<script type="text/javascript">
+                document.write(""+screen.width+"");
+            </script>';
+//    $tabResol['width']=
+    return $resol;
+}
+

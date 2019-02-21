@@ -472,6 +472,10 @@ div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
   padding: 30px 0;
 }
 
+.containerImage img {
+  max-width: 100%;
+}
+
 .containerSliderGalerie {
   display: flex;
   flex-direction: row;
@@ -480,7 +484,7 @@ div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
   padding-bottom: 60px;
 }
 
-.containerSliderGalerie .page {
+.page {
   cursor: pointer;
   background-color: #1b1b1b;
   color: #fff;
@@ -489,6 +493,26 @@ div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng {
 
 .containerSliderGalerie .panel {
   margin: 0 30px;
+}
+
+.containerSliderGalerie button {
+  border: 0;
+}
+
+.containerControlPage700 {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.containerControlPage700 .page {
+  margin: 10px 10px 20px 10px;
+}
+
+#slideGalerie {
+  width: 100vw;
+  padding: 0 15px;
 }
 
 .masonry {
