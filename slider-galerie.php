@@ -1,13 +1,15 @@
 <?php
 
-
-if ( get_query_var('paged') ) {
-    $paged = get_query_var('paged');
-} elseif ( get_query_var('page') ) { // 'page' is used instead of 'paged' on Static Front Page
-    $paged = get_query_var('page');
-} else {
+$monUrl = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$reg="#([^/]*)/$#";
+preg_match($reg,$monUrl,$res);
+if(strlen ($res[1]) === 1){
+    $paged = $res[1];
+}else{
     $paged = 1;
 }
+
+
 
 $args= array(
     'paged' => $paged,
@@ -23,6 +25,8 @@ $my_query = new WP_Query($args);
 $temp_query = $wp_query;
 $wp_query   = NULL;
 $wp_query   = $my_query;
+
+
 ?>
 
 
@@ -32,11 +36,11 @@ $wp_query   = $my_query;
 
 <div class="container-fluid" id="slideGalerie">
     <div class="row">
-        <input type="text" value="<?php echo $paged ?>" >
+<!--        <input type="text" value="--><?php //echo $paged ?><!--" >-->
         <div class="containerSliderGalerie <?php echo $paged ?>">
-        <div class="page prec" id="precedent">
-            Tableaux précédents
-        </div>
+<!--        <div class="page prec" id="precedent">-->
+<!--            Tableaux précédents-->
+<!--        </div>-->
             <?php
             while($my_query ->have_posts()):
                 $my_query ->the_post();
@@ -61,9 +65,9 @@ $wp_query   = $my_query;
 
 
             <?php endwhile; ?>
-            <div class="page suiv" id="suivant">
-                Tableaux suivants
-            </div>
+<!--            <div class="page suiv" id="suivant">-->
+<!--                Tableaux suivants-->
+<!--            </div>-->
 
         </div>
 
@@ -71,13 +75,17 @@ $wp_query   = $my_query;
 <!--    --><?php //mb_pagination($my_query); ?>
 </div>
 
-<?php endif;
-wp_reset_postdata();
+<?php endif;  wp_reset_postdata();  ?>
 
-
-previous_posts_link('Tableaux précédents');
-next_posts_link( 'Tableaux suivants' , $my_query->max_num_pages );
-
+<div class="container containerPagination">
+    <div class="controlePage precedent">
+        <?php mb_previous_posts_link('Tableaux précédents', $paged);?>
+    </div>
+    <div class="controlePage suivant">
+        <?php  mb_next_posts_link( 'Tableaux suivants' , $my_query->max_num_pages, $paged  ); ?>
+    </div>
+</div>
+<?php
 // Reset main query object
 $wp_query = NULL;
 $wp_query = $temp_query;

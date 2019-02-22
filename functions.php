@@ -205,11 +205,11 @@ add_action('widgets_init', 'mb_admin_widget');
 
 function mb_get_meta_date_cat($date1, $date2, $cat, $tags){
 
-    $chaine = 'publié le <time class="entry-date" datetime="';
+    $chaine = 'Publié le <time class="entry-date" datetime="';
     $chaine .= $date1;
     $chaine .= '">';
     $chaine .= $date2;
-    $chaine .= '</time> dans la catégorie : ';
+    $chaine .= '</time><br> Dans la catégorie : ';
     $chaine .= $cat;
     if(strlen($tags)>0):
         $chaine .= ' avec les étiquettes : '.$tags;
@@ -361,3 +361,92 @@ function mb_content_show($column, $post_id){
     }
 }
 add_action('pre_get_posts', 'mb_change_slides_ordrer');
+
+
+
+//=================================================================
+// ===========  coursircuitage de next_post link
+//=================================================================
+
+function mb_get_next_posts_link( $label = null, $max_page = 0, $paged ) {
+    global $wp_query;
+    $monUrl = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+    if ( !$max_page )
+        $max_page = $wp_query->max_num_pages;
+
+    $nextpage = intval($paged) + 1;
+    $reg="#([^/]*)/$#";
+    preg_match($reg,$monUrl,$res);
+    if(strlen ($res[1]) === 1){
+        $monUrl = str_replace($res,'',$monUrl);
+    }
+    if ( null === $label )
+        $label = __( 'Next Page &raquo;' );
+
+    if ( !is_single() && ( $nextpage <= $max_page ) ) {
+        /**
+         * Filters the anchor tag attributes for the next posts page link.
+         *
+         * @since 2.7.0
+         *
+         * @param string $attributes Attributes for the anchor tag.
+         */
+        $attr = apply_filters( 'next_posts_link_attributes', '' );
+        $ancre = '#slideGalerie';
+
+        return '<a href="'.$monUrl.'' . $nextpage.''. $ancre. "\"  $attr>" . preg_replace('/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label) . '</a>';
+        $temp_page = $paged;
+        $paged   = NULL;
+        $paged   = $nextpage;
+    }
+    if (  $nextpage > $max_page  ) {
+        return '';
+    }
+}
+
+function mb_next_posts_link( $label = null, $max_page = 0 , $paged ) {
+    echo mb_get_next_posts_link( $label, $max_page , $paged );
+}
+
+
+function mb_get_previous_posts_link( $label = null, $paged ) {
+
+    $monUrl = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+    $previouspage = intval($paged) - 1;
+
+    $reg="#([^/]*)/$#";
+    preg_match($reg,$monUrl,$res);
+    if(strlen ($res[1]) === 1){
+        $monUrl = str_replace($res,'',$monUrl);
+    }
+
+    if ( null === $label )
+        $label = __( 'Next Page &raquo;' );
+
+    if ( !is_single() && ( $previouspage >0 ) ) {
+        /**
+         * Filters the anchor tag attributes for the next posts page link.
+         *
+         * @since 2.7.0
+         *
+         * @param string $attributes Attributes for the anchor tag.
+         */
+        $attr = apply_filters( 'next_posts_link_attributes', '' );
+        $ancre = '#slideGalerie';
+
+        return '<a href="'.$monUrl.'' . $previouspage.''. $ancre. "\"  $attr>" . preg_replace('/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label) . '</a>';
+        $temp_page = $paged;
+        $paged   = NULL;
+        $paged   = $previouspage;
+    }
+    if (  $previouspage < 1  ) {
+        return '';
+    }
+}
+
+
+function mb_previous_posts_link( $label = null, $paged ) {
+    echo mb_get_previous_posts_link( $label, $paged );
+}

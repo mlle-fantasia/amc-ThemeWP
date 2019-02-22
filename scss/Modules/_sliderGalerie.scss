@@ -3,6 +3,8 @@
   flex-direction: row;
   align-items: center;
   margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .containerSliderGalerie .page{
   cursor: pointer;
@@ -12,6 +14,21 @@
 }
 
 .containerSliderGalerie .panel{
-  margin: 0 30px;
+  margin: 30px 30px;
 }
 
+.containerImage img{
+  max-width: 100%;
+}
+.containerPagination{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerPagination a{
+  color: #fff;
+  background-color: #1b1b1b;
+  padding: 6px;
+}

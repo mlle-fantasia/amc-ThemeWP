@@ -57,6 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 containerInfoTableau">
+                    <p><?php the_content() ?></p><hr>
                     <p>
                         <?php
                         echo mb_get_meta_date_cat(  esc_attr(get_the_date('c')), //récupère la date au format iso
@@ -65,7 +66,7 @@
                             get_the_tag_list('', ', '));  //récupère la liste des tag de l'article sous forme de lien
                         ?>
                     </p>
-                    <p><?php the_content() ?></p>
+
                 </div>
             </div>
         </div>
