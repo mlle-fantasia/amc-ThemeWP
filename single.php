@@ -64,7 +64,12 @@
 
 <section>
 
-    <?php get_template_part('slider', 'galerie'); ?>
+
+    <?php
+        wp_reset_postdata();
+
+        get_template_part('slider', 'galerie');
+    ?>
 
 
 </section>

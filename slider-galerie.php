@@ -1,53 +1,52 @@
 <?php
-
-$postsParPage = '';
-if(!isset($_GET['r']))
-{
-    echo "<script language=\"JavaScript\"> document.location=\"$PHP_SELF?r=1&Largeur=\"+screen.width;</script>";
-}
-
-// Code à afficher en cas de détection de la résolution d'affichage
-    if (isset($_GET['Largeur'])) {
-// Résolution détectée
-        if ($_GET['Largeur'] > 1780) {
-            $postsParPage = 4;
-        }
-        if ($_GET['Largeur'] < 1780) {
-            $postsParPage = 3;
-        }
-        if ($_GET['Largeur'] < 1250) {
-            $postsParPage = 2;
-        }
-        if ($_GET['Largeur'] < 1000) {
-            $postsParPage = 1;
-        }
-    } else {
-// Résolution non détectée
-        $postsParPage = 4;
-    }
-
-// calcule de l'offset en fonction du numéro de la page dans l'url
-if(isset($_GET['Page'])) {
-    $page = (int)$_GET['Page'];
-    $offsetTableau = $postsParPage*($page-1);
-}
+//
+//$postsParPage = '';
+//if(!isset($_GET['r']))
+//{
+//    echo "<script language=\"JavaScript\"> document.location=\"$PHP_SELF?r=1&Largeur=\"+screen.width;</script>";
+//}
+//
+//// Code à afficher en cas de détection de la résolution d'affichage
+//    if (isset($_GET['Largeur'])) {
+//// Résolution détectée
+//        if ($_GET['Largeur'] > 1780) {
+//            $postsParPage = 4;
+//        }
+//        if ($_GET['Largeur'] < 1780) {
+//            $postsParPage = 3;
+//        }
+//        if ($_GET['Largeur'] < 1250) {
+//            $postsParPage = 2;
+//        }
+//        if ($_GET['Largeur'] < 1000) {
+//            $postsParPage = 1;
+//        }
+//    } else {
+//// Résolution non détectée
+//        $postsParPage = 4;
+//    }
+//
+//// calcule de l'offset en fonction du numéro de la page dans l'url
+//if(isset($_GET['Page'])) {
+//    $page = (int)$_GET['Page'];
+//    $offsetTableau = $postsParPage*($page-1);
+//}
 
 $args= array(
     'paged' => $paged,
     'post_type' => 'post',
-    'posts_per_page' => $postsParPage,
-    'offset' => $offsetTableau,
+    'posts_per_page' => 4,
+//    'offset' => $offsetTableau,
     'order' => 'DESC', // 'ASC'
     'orderby' => 'date' // modified | title | name | ID | rand
 );
 
 $my_query = new WP_Query($args);
 
-// Pagination fix
-$temp_query = $wp_query;
-$wp_query   = NULL;
-$wp_query   = $my_query;
-
+//// Pagination fix
+//$temp_query = $wp_query;
+//$wp_query   = NULL;
+//$wp_query   = $my_query;
 
 ?>
 <?php if ( $my_query ->have_posts() ): ?>
@@ -109,8 +108,8 @@ $wp_query   = $my_query;
 wp_reset_postdata();
 
 
-// Reset main query object
-$wp_query = NULL;
-$wp_query = $temp_query;
+//// Reset main query object
+//$wp_query = NULL;
+//$wp_query = $temp_query;
 
 ?>
