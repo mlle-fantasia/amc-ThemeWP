@@ -3,9 +3,10 @@
   flex-direction: row;
   align-items: center;
   margin: auto;
-  padding-bottom: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.page{
+.containerSliderGalerie .page{
   cursor: pointer;
   background-color: #1b1b1b;
   color: #fff;
@@ -13,25 +14,21 @@
 }
 
 .containerSliderGalerie .panel{
-  margin: 0 30px;
+  margin: 30px 30px;
 }
 
-.containerSliderGalerie button{
-  border: 0;
+.containerImage img{
+  max-width: 100%;
 }
-
-.containerControlPage700{
+.containerPagination{
   display: flex;
   flex-direction: row;
-  margin: auto;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.containerControlPage700 .page{
-  margin: 10px 10px 20px 10px;
-}
-
-#slideGalerie{
-  width: 100vw;
-  padding: 0 15px;
+.containerPagination a{
+  color: #fff;
+  background-color: #1b1b1b;
+  padding: 6px;
 }

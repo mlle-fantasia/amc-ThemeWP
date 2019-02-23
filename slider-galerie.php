@@ -1,36 +1,15 @@
 <?php
 //
-//$postsParPage = '';
-//if(!isset($_GET['r']))
-//{
-//    echo "<script language=\"JavaScript\"> document.location=\"$PHP_SELF?r=1&Largeur=\"+screen.width;</script>";
-//}
-//
-//// Code à afficher en cas de détection de la résolution d'affichage
-//    if (isset($_GET['Largeur'])) {
-//// Résolution détectée
-//        if ($_GET['Largeur'] > 1780) {
-//            $postsParPage = 4;
-//        }
-//        if ($_GET['Largeur'] < 1780) {
-//            $postsParPage = 3;
-//        }
-//        if ($_GET['Largeur'] < 1250) {
-//            $postsParPage = 2;
-//        }
-//        if ($_GET['Largeur'] < 1000) {
-//            $postsParPage = 1;
-//        }
-//    } else {
-//// Résolution non détectée
-//        $postsParPage = 4;
-//    }
-//
-//// calcule de l'offset en fonction du numéro de la page dans l'url
-//if(isset($_GET['Page'])) {
-//    $page = (int)$_GET['Page'];
-//    $offsetTableau = $postsParPage*($page-1);
-//}
+$monUrl = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$reg="#([^/]*)/$#";
+preg_match($reg,$monUrl,$res);
+if(strlen ($res[1]) === 1){
+    $paged = $res[1];
+}else{
+    $paged = 1;
+}
+
+
 
 $args= array(
     'paged' => $paged,
@@ -43,23 +22,23 @@ $args= array(
 
 $my_query = new WP_Query($args);
 
-//// Pagination fix
-//$temp_query = $wp_query;
-//$wp_query   = NULL;
-//$wp_query   = $my_query;
+// Pagination fix
+$temp_query = $wp_query;
+$wp_query   = NULL;
+$wp_query   = $my_query;
+
+
 
 ?>
 <?php if ( $my_query ->have_posts() ): ?>
 
 <div class="container-fluid" id="slideGalerie">
     <div class="row">
-        <input type="text" id="nbPosts" value="<?php echo $my_query->found_posts?>" hidden >
-        <input type="text" id="nbPostsParPage" value="<?php echo $my_query->query_vars['posts_per_page'] ?>" hidden >
+<!--        <input type="text" value="--><?php //echo $paged ?><!--" >-->
         <div class="containerSliderGalerie <?php echo $paged ?>">
-
-        <button class="page prec precedent" id="">
-            Tableaux précédents
-        </button>
+<!--        <div class="page prec" id="precedent">-->
+<!--            Tableaux précédents-->
+<!--        </div>-->
             <?php
             while($my_query ->have_posts()):
                 $my_query ->the_post();
@@ -84,32 +63,36 @@ $my_query = new WP_Query($args);
 
 
             <?php endwhile; ?>
-            <button class="page suiv suivant" id="">
-                Tableaux suivants
-            </button>
+<!--            <div class="page suiv" id="suivant">-->
+<!--                Tableaux suivants-->
+<!--            </div>-->
 
-        </div>
 
     </div>
 
 <!--    boutton de controle de page galerie pour des écrans de moins de 700px-->
-    <div class="row containerControlPage700">
-        <button class="page prec700 precedent" id="">
-            Tableaux suivants
-        </button>
-        <button class="page suiv700 suivant" id="">
-            Tableaux suivants
-        </button>
-    </div>
+<!--    <div class="row containerControlPage700">-->
+<!--        <button class="page prec700 precedent" id="">-->
+<!--            Tableaux suivants-->
+<!--        </button>-->
+<!--        <button class="page suiv700 suivant" id="">-->
+<!--            Tableaux suivants-->
+<!--        </button>-->
+<!--    </div>-->
 
 </div>
 
-<?php endif;
-wp_reset_postdata();
+<?php endif;  wp_reset_postdata();  ?>
 
-
-//// Reset main query object
-//$wp_query = NULL;
-//$wp_query = $temp_query;
-
+<div class="container containerPagination">
+    <div class="controlePage precedent">
+        <?php mb_previous_posts_link('Tableaux précédents', $paged);?>
+    </div>
+    <div class="controlePage suivant">
+        <?php  mb_next_posts_link( 'Tableaux suivants' , $my_query->max_num_pages, $paged  ); ?>
+    </div>
+</div>
+<?php
+    $my_query = null;
+    $wp_query = $temp_query;
 ?>
