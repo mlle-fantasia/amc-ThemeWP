@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  siteweb:
+    container_name: amc_siteweb
+    image: wordpress:latest
+    restart: always
+    expose:
+      - 80
+    volumes:
+      - ./conf.d/upload.ini:/usr/local/etc/php/conf.d/upload.ini
+      - ./:/var/www/html/wp-content/themes/amcTheme
+    env_file:
+      - .env
+
+networks:
+    default:
+       external:
+         name: webproxy
